@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'pages#second'
+  root 'pages#first'
 
   get 'pages/first'
   get 'pages/second'
