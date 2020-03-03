@@ -1,5 +1,3 @@
-<h1>Pages#first</h1>
-<p>Find me in app/views/pages/first.html.erb</p>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -13,13 +11,14 @@
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
 		<!-- WEB FONTS : use %7C instead of | (pipe) -->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
-		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" type="text/css" />
+      <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" %>
+      <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto&display=swap" %>
 
 		<!-- CORE CSS -->
-		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <%= stylesheet_link_tag "/assets/plugins/bootstrap/css/bootstrap.min.css" %>
 
 		<!-- REVOLUTION SLIDER -->
+      <%= stylesheet_link_tag "/assets/plugins/slider.revolution/css/extralayers.css" %>
 		<link href="assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css" />
 		<link href="assets/plugins/slider.revolution/css/settings.css" rel="stylesheet" type="text/css" />
 
@@ -33,6 +32,7 @@
 
 		<link rel="shortcut icon" href="new_assets/logos/favicon.ico">
 
+        
 		<style>
 			html * {
 				font-family: 'Roboto','et-line','FontAwesome' !important;
@@ -60,7 +60,7 @@
 
 
 		</style>
-	</head>
+
 	<!--
 		AVAILABLE BODY CLASSES:
 		
@@ -80,7 +80,7 @@
 		menu-vertical-hide		= hidden, open on click
 		
 		BACKGROUND IMAGE [together with .boxed class]
-		data-background="assets/images/_smarty/boxed_background/1.jpg"
+		data-background="app/assets/images/_smarty/boxed_background/1.jpg"
 	-->
 	<body id="top" class="smoothscroll enable-animation grain-blue">
 
@@ -1211,13 +1211,11 @@
 							<!-- Small Description -->
 							<p>
 								Ask our customers and you will know why you will want our elevators. <br />
-								Alternatively, call us and we will answer your questions.
+								Alternatively, call us and we'll answer your questions.
 							</p>
 							<h2>(581) 701-0303</h2>
 						</div>
-						<!-- /col #1 -->
-
-						<!-- col #2 -->
+					
 						<div class="col-md-4">
 							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
 
@@ -1297,6 +1295,3 @@
 			event.preventDefault()
 		});
 		</script>
-
-	</body>
-</html>
