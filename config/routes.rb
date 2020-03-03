@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#first'
 
-
-
   get 'pages/first'
   get 'pages/second'
   get 'pages/third'
