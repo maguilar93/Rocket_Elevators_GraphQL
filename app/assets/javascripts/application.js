@@ -19,3 +19,7 @@
 //= require popper
 //= require bootstrap-sprockets
 
+//= require plugins/slider.revolution/js/jquery.themepunch.tools.min
+//= require plugins/slider.revolution/js/jquery.themepunch.revolution.min
+//= require demo.revolution_slider
+
