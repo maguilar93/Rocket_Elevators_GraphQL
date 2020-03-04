@@ -114,7 +114,7 @@
 			<!-- Parallax Ribbon -->
 			
 			<section class="parallax parallax-1" style="background-image: url(<%= asset_url("AdobeStock_179073967.jpeg") %>); height:600px;"> 
-			
+
 				<div class="overlay dark-3"><!-- dark overlay [1 to 9 opacity] --></div>
 
 				<div class="container-fluid">
@@ -318,7 +318,11 @@
 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script> -->
 
         		<!-- JAVASCRIPT FILES -->
-        <%= javascript_include_tag "scripts" %>		
+        <%= javascript_include_tag "scripts" %>	
+
+		<%= javascript_include_tag "plugins/jquery.nav" %>
+		<%= javascript_include_tag "plugins/smoothscroll" %>
+		<%= javascript_include_tag "demo.portfolio_ajax" %>
 
 	</body>
 </html>
