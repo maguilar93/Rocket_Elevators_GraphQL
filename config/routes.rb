@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   resources :pages
+
+
   root 'pages#first'
+
+  root 'pages#quoteform'
+
 
   get 'pages/first'
   get 'pages/second'

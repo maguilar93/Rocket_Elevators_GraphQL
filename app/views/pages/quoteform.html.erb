@@ -14,17 +14,23 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" type="text/css" />
 
-		<!-- CORE CSS -->
+		<!-- CORE CSS
 		<link href="assets/javascripts/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <%= stylesheet_link_tag "/assets/css/plugins/bootstrap/css/bootstrap.min.css" %>
-		
-		<!-- THEME CSS -->
+		 -->
+
+		<!-- THEME CSS
 		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+         -->
+        <%= stylesheet_link_tag "essentials" %>
+        <%= stylesheet_link_tag "layout" %>
 
-		<!-- PAGE LEVEL SCRIPTS -->
+		<!-- PAGE LEVEL SCRIPTS
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
+         -->
+         <%= stylesheet_link_tag "header-1" %>
+         <%= stylesheet_link_tag "blue" %>
 
 		<style>
 			html * {
@@ -71,7 +77,7 @@
 
 						<!-- Logo -->
 						<a class="logo float-left" href="index.html">
-							<img src="new_assets/R2.png" alt="Rocket Elevators Logo" />
+							<%= image_tag("R2.png", :alt => "Rocket Elevators Logo") %>
 						</a>
 
 						<!-- 
@@ -430,10 +436,8 @@
 
 
 		<!-- JAVASCRIPT FILES -->
-		<script>var plugin_path = 'assets/plugins/';</script>
-		<script src="assets/javascripts/plugins/jquery/jquery-3.3.1.min.js"></script>
+        <%= javascript_include_tag "scripts" %>
+        <%= javascript_include_tag "calculator" %>
 
-		<script src="assets/js/scripts.js"></script>
-		<script src="new_assets/js/calculator.js"></script>
 	</body>
 </html>
