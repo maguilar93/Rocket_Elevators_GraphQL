@@ -28,3 +28,8 @@ Rails.application.config.assets.precompile += %w( plugins/slider.revolution/css/
 Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/jquery.themepunch.tools.min.js )
 Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/jquery.themepunch.revolution.min.js )
 Rails.application.config.assets.precompile += %w( demo.revolution_slider.js )
+
+Rails.application.config.assets.precompile += %w( plugins/jquery.nav.min.js )
+Rails.application.config.assets.precompile += %w( plugins/jquery/jquery-3.3.1.min.js )
+
+

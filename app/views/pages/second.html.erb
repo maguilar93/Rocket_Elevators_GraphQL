@@ -10,15 +10,13 @@
 
 		<%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" %>
 		<%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto&display=swap" %>
-
-		<%= stylesheet_link_tag "/assets/plugins/slider.revolution/css/extralayers.css" %>
-	  	<%= stylesheet_link_tag "/assets/plugins/slider.revolution/css/settings.css" %>
 		
-		<%= stylesheet_link_tag "/assets/stylesheets/essentials.css" %>
-		<%= stylesheet_link_tag "/assets/stylesheets/layout.css" %>
+		<%= stylesheet_link_tag "essentials" %>
+		<%= stylesheet_link_tag "layout" %>
 
-		
-		<%= stylesheet_link_tag "/assets/stylesheets/header-1.css" %>
+		<%= stylesheet_link_tag "header-1" %>
+		<%= stylesheet_link_tag "blue" %>
+
 	</head>
 
 	<body id="top" class="smoothscroll enable-animation grain-blue">
@@ -110,12 +108,10 @@
 			</div>
 
 			<!-- Parallax Ribbon -->
-			<!-- <section class="parallax parallax-1" style="background-image: url('new_assets/AdobeStock_146216308.jpeg'); height:600px;"> -->
+			
+			<section class="parallax parallax-1" style="background-image: url(<%= asset_url("AdobeStock_146216308.jpeg") %>); height:600px;">
+
 				<div class="overlay dark-3"><!-- dark overlay [1 to 9 opacity] --></div>
-
-            <%= image_tag("AdobeStock_146216308", :class => "parallax parallax-1", :alt => "cover image with person pressing button in elevator", :height => "600px") %>
-
-
 				<div class="container-fluid">
 
 					<div class="text-center">
@@ -318,7 +314,12 @@
 
         		<!-- JAVASCRIPT FILES -->
         <%= javascript_include_tag "scripts" %>
-		
+		<%= javascript_include_tag "plugins/jquery/jquery-3.3.1.min" %>
+
+		<%= javascript_include_tag "plugins/jquery.nav" %>
+		<%= javascript_include_tag "plugins/smoothscroll" %>à
+		<%= javascript_include_tag "demo.portfolio_ajax" %>
+
 
 	</body>
 </html>
