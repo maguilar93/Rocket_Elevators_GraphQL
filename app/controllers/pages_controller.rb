@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
   def third
   end
+
+  def quoteform
+  end
 end
