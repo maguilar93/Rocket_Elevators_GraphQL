@@ -12,6 +12,7 @@ module Elevatorsrails
     config.load_defaults 5.2
 
     config.assets.paths << Rails.root.join('.app/assets/javascripts/plugins')
+    # config.assets.paths << Rails.root.join('.app/assets/stylesheets/plugins')
     # config.assets.paths << Rails.root.join("app", "assets", "javascripts", "plugins", "slider.revolution", "js")
 
 
