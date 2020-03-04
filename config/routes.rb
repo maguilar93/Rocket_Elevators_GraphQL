@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   resources :pages
 
-
-  root 'pages#second'
-
- 
+  root 'pages#first'
 
 
   get 'pages/first'

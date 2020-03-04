@@ -7,6 +7,7 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.paths << Emoji.images_path
 # Add Yarn node_modules folder to the asset load path.
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
+Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 
 # Precompile additional assets.
@@ -23,6 +24,8 @@ Rails.application.config.assets.precompile += %w( header-1.css )
 Rails.application.config.assets.precompile += %w( blue.css )
 Rails.application.config.assets.precompile += %w( scripts.js )
 Rails.application.config.assets.precompile += %w( calculator.js )
-
-
-
+Rails.application.config.assets.precompile += %w( plugins/slider.revolution/css/extralayers.css )
+Rails.application.config.assets.precompile += %w( plugins/slider.revolution/css/settings.css )
+Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/jquery.themepunch.tools.min.js )
+Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/jquery.themepunch.revolution.min.js )
+Rails.application.config.assets.precompile += %w( demo.revolution_slider.js )
