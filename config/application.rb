@@ -13,7 +13,10 @@ module Elevatorsrails
 
     config.assets.paths << Rails.root.join('.app/assets/javascripts/plugins')
     # config.assets.paths << Rails.root.join('.app/assets/stylesheets/plugins')
+
     # config.assets.paths << Rails.root.join("app", "assets", "javascripts", "plugins", "slider.revolution", "js")
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
 
     # Settings in config/environments/* take precedence over those specified here.
