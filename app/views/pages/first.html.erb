@@ -12,8 +12,6 @@
 		<%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto&display=swap" %>
 
 		<!-- CORE CSS -->
-		<%= stylesheet_link_tag "plugins/bootstrap/css/bootstrap.min" %>
-
 		<%= stylesheet_link_tag "plugins/slider.revolution/css/extralayers" %>
 	  	<%= stylesheet_link_tag "plugins/slider.revolution/css/settings" %>
 		
@@ -23,6 +21,32 @@
 		<%= stylesheet_link_tag "header-1" %>
 		<%= stylesheet_link_tag "blue" %>
 
+		<style>
+			html * {
+				font-family: 'Roboto','et-line','FontAwesome' !important;
+			}
+
+			.bgcolor{
+				background-color:steelblue;
+			}
+
+			.img-sizefit180{
+				height:180px;
+				object-fit: cover;
+			}
+
+			.img-sizefit220{
+				height:220px;
+				object-fit: cover;
+			}
+
+			.img-logo{
+				width:150px;
+				height:150px;
+				object-fit: contain;
+			}
+		</style>
+		
 	</head>
 
 	<body id="top" class="smoothscroll enable-animation grain-blue">
@@ -689,7 +713,7 @@
 		<!-- /PORTFOLIO -->
 
 		<!-- Members carousel-->
-		<!-- <section class="section-xs dark">
+		<section class="section-xs dark">
 			<div class="container-fluid">
 
 				<div class="owl-carousel text-center owl-testimonial m-0"
@@ -723,12 +747,12 @@
 				</div>
 
 			</div>
-		</section>-->
+		</section>
 		<!-- /Members carousel -->
 
 
 		<!-- News -->
-		<!--<section id="news">
+		<section id="news">
 			<div class="container-fluid">
 
 				<div class="heading-title heading-dotted text-center">
@@ -855,12 +879,12 @@
 				</div>
 
 			</div>
-		</section>-->
+		</section>
 		<!-- /News -->
 
 
 		<!-- Customers -->
-		<!--<section id="customers" class="alternate">
+		<section id="customers" class="alternate">
 			<div class="container-fluid">
 
 				<div class="heading-title heading-dotted text-center">
@@ -908,20 +932,88 @@
 				</ul>
 
 			</div>
-		</section>-->
+		</section>
 		<!-- /Customers -->
 
+			<!-- FOOTER -->
+			<footer id="footer">
+				<div class="container-fluid">
 
+
+					<div class="row">
+
+						<!-- col #1 -->
+						<div class="col-md-8">
+
+							<h3 class="letter-spacing-1">WHY US?</h3>
+
+							<!-- Small Description -->
+							<p>
+								Ask our customers and you will know why you will want our elevators. <br />
+								Alternatively, call us and we'll answer your questions.
+							</p>
+							<h2>(581) 701-0303</h2>
+						</div>
+						<!-- /col #1 -->
+
+						<!-- col #2 -->
+						<div class="col-md-4">
+							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+
+							<!-- Newsletter Form -->
+							<p>Subscribe to Our (non-existant) Newsletter to get Important News & Offers (to come)</p>
+
+							<form class="validate" action="" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+									<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
+									<span class="input-group-btn">
+										<button id="submitbtn2" class="btn btn-success" type="submit">Subscribe</button>
+									</span>
+								</div>
+							</form>
+							<!-- /Newsletter Form -->
+
+
+						</div>
+						<!-- /col #2 -->
+
+					</div>
+
+
+				</div>
+
+				<div class="copyright">
+					<div class="container">
+						<ul class="float-right m-0 list-inline mobile-block">
+							<li>Terms &amp; Conditions</li>
+							<li>&bull;</li>
+							<li>Privacy</li>
+						</ul>
+						&copy; All Rights Reserved, Rocket Elevators LTD
+					</div>
+				</div>
+
+			</footer>
+			<!-- /FOOTER -->
 
 	</div>
 
+		<!-- SCROLL TO TOP -->
+		<a href="#" id="toTop"></a>
 
-		<%= javascript_include_tag "plugins/jquery/jquery-3.3.1.min" %>
 
+		<!-- PRELOADER -->
+		<div id="preloader">
+			<div class="inner">
+				<span class="loader"></span>
+			</div>
+		</div><!-- /PRELOADER -->
+
+		<%= javascript_include_tag "scripts" %>
 		<%= javascript_include_tag "plugins/slider.revolution/js/jquery.themepunch.tools.min" %>
 		<%= javascript_include_tag "plugins/slider.revolution/js/jquery.themepunch.revolution.min" %>
 		<%= javascript_include_tag "demo.revolution_slider" %>
-		<%= javascript_include_tag "scripts" %>
 
 		<!-- PAGELEVEL SCRIPTS -->
 		<%= javascript_include_tag "contact" %>
