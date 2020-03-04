@@ -11,14 +11,14 @@
 		<%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" %>
 		<%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto&display=swap" %>
 
-		<%= stylesheet_link_tag "/assets/plugins/slider.revolution/css/extralayers.css" %>
-	  	<%= stylesheet_link_tag "/assets/plugins/slider.revolution/css/settings.css" %>
+		<%= stylesheet_link_tag "plugins/slider.revolution/css/extralayers" %>
+	  	<%= stylesheet_link_tag "plugins/slider.revolution/css/settings" %>
 		
-		<%= stylesheet_link_tag "/assets/stylesheets/essentials.css" %>
-		<%= stylesheet_link_tag "/assets/stylesheets/layout.css" %>
+		<%= stylesheet_link_tag "essentials" %>
+		<%= stylesheet_link_tag "layout" %>
 
 		
-		<%= stylesheet_link_tag "/assets/stylesheets/header-1.css" %>
+		<%= stylesheet_link_tag "header-1" %>
 	</head>
 
 	<body id="top" class="smoothscroll enable-animation grain-blue">
@@ -159,9 +159,13 @@
 					<li data-transition="parallaxtotop" data-slotamount="7" data-masterspeed="300"
 						data-saveperformance="off" data-title="Residential Buildings">
 						<!-- MAIN IMAGE -->
+						<!--
 						<img src="new_assets/AdobeStock_179073967.jpeg"
 							alt="cover image with elevators and people waiting" data-bgposition="center top"
 							data-bgfit="cover" data-bgrepeat="no-repeat">
+							-->
+
+							<%= image_tag("AdobeStock_179073967", :alt => "cover image with elevators and people waiting") %>
 
 						<div class="overlay dark-3">
 							<!-- dark overlay [0 to 9 opacity] -->
@@ -194,9 +198,13 @@
 					<li data-transition="parallaxtotop" data-slotamount="7" data-masterspeed="300"
 						data-saveperformance="off" data-title="Corporate Buildings">
 						<!-- MAIN IMAGE -->
+						<!--
 						<img src="new_assets/AdobeStock_146216308.jpeg"
 							alt="cover image with person pressing button in elevator" data-bgposition="center top"
 							data-bgfit="cover" data-bgrepeat="no-repeat">
+							-->
+
+							<%= image_tag("AdobeStock_146216308", :alt => "cover image with person pressing button in elevator") %>
 
 						<div class="overlay dark-3">
 							<!-- dark overlay [0 to 9 opacity] -->
@@ -233,7 +241,9 @@
 
 
 		</div>
-		
+		<%= javascript_include_tag "plugins/slider.revolution/js/jquery.themepunch.tools.min" %>
+		<%= javascript_include_tag "plugins/slider.revolution/js/jquery.themepunch.revolution.min" %>
+		<%= javascript_include_tag "demo.revolution_slider" %>
 	</body>
 		
 
