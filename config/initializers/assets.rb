@@ -24,3 +24,5 @@ Rails.application.config.assets.precompile += %w( blue.css )
 Rails.application.config.assets.precompile += %w( scripts.js )
 Rails.application.config.assets.precompile += %w( calculator.js )
 
+
+
