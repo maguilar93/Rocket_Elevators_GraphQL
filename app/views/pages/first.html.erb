@@ -14,11 +14,11 @@
 		<%= stylesheet_link_tag "/assets/plugins/slider.revolution/css/extralayers.css" %>
 	  	<%= stylesheet_link_tag "/assets/plugins/slider.revolution/css/settings.css" %>
 		
-		<%= stylesheet_link_tag "/assets/stylesheets/essentials.css" %>
-		<%= stylesheet_link_tag "/assets/stylesheets/layout.css" %>
+		<%= stylesheet_link_tag "essentials" %>
+		<%= stylesheet_link_tag "layout" %>
 
 		
-		<%= stylesheet_link_tag "/assets/stylesheets/header-1.css" %>
+		<%= stylesheet_link_tag "header-1.css" %>
 	</head>
 
 	<body id="top" class="smoothscroll enable-animation grain-blue">
@@ -233,7 +233,7 @@
 
 
 		</div>
-		
+	<%= yield %>
 	</body>
 		
 
