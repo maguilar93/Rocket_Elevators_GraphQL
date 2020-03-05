@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'pages/second'
   get 'pages/third'
   get 'pages/quoteform'
-  get 'pages/mainpage_form'
+  get 'pages/login'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
