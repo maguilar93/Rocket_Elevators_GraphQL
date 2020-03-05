@@ -12,16 +12,42 @@
 		<%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto&display=swap" %>
 
 		<!-- CORE CSS -->
-		<%= stylesheet_link_tag "plugins/bootstrap/css/bootstrap.min" %>
 
 		<%= stylesheet_link_tag "plugins/slider.revolution/css/extralayers" %>
 	  	<%= stylesheet_link_tag "plugins/slider.revolution/css/settings" %>
 		
+
 		<%= stylesheet_link_tag "essentials" %>
 		<%= stylesheet_link_tag "layout" %>
 		
 		<%= stylesheet_link_tag "header-1" %>
 		<%= stylesheet_link_tag "blue" %>
+
+		<style>
+			html * {
+				font-family: 'Roboto', 'et-line', 'FontAwesome' !important;
+			}
+
+			.bgcolor {
+				background-color: steelblue;
+			}
+
+			.img-sizefit180 {
+				height: 180px;
+				object-fit: cover;
+			}
+
+			.img-sizefit220 {
+				height: 220px;
+				object-fit: cover;
+			}
+
+			.img-logo {
+				width: 150px;
+				height: 150px;
+				object-fit: contain;
+			}
+		</style>
 
 	</head>
 
@@ -372,7 +398,7 @@
 
 					<div class="col-md-3 col-sm-3 mix corporate">
 						<!-- item -->
-						<div class="item-box">
+						<div :class="item-box">
 							<figure>
 								<!-- <span class="item-hover">
 									<span class="overlay dark-5"></span>
