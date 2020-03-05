@@ -149,7 +149,7 @@
 
 
 			<!-- FORM -->
-			<section id="requestform">
+			<section id="requestform"   action="/new_quote" method="post" enctype="multipart/form-data" data-success="Sent! Thank you!"	data-toastr-position="top-right">
 				<div class="container">
 
 					<header class="text-center mb-60">
@@ -207,6 +207,7 @@
 							</div><!-- /Alert Mandatory -->
 
 							<!-- Quote Form -->
+					
 							<form id="quote-form" action="" method="post" enctype="text/plain">
 								<fieldset>
 									<div class="row">
@@ -225,44 +226,44 @@
 									<div class="row">
 										<div class="col-md-4 r-form r-form-res">
 											<label for="cNumApt"># of Apartments</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumApt]" id="cNumApt" class="used-in-calc">
+											<input type="number" min="0" step="1" name="quote[Nb_Appartement]" id="cNumApt" class="used-in-calc">
 										</div>
 										<div class="col-md-4 r-form r-form-com r-form-hyb">
 											<label for="cNumBsns"># of Business</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumBsns]" id="cNumBsns">
+											<input type="number" min="0" step="1" name="quote[Nb_Business]" id="cNumBsns">
 										</div>
 										<div class="col-md-4 r-form r-form-cor">
 											<label for="cNumCom"># of Companies</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumCom]" id="cNumCom">
+											<input type="number" min="0" step="1" name="" id="cNumCom">
 										</div>
 										<div class="col-md-4 r-form r-form-res r-form-com r-form-cor r-form-hyb">
 											<label for="cNumFlr"># of Floors</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumFlr]" id="cNumFlr" class="used-in-calc">
+											<input type="number" min="0" step="1" name="quote[Nb_Floor]" id="cNumFlr" class="used-in-calc">
 										</div>
 										<div class="col-md-4 r-form r-form-res r-form-com r-form-cor r-form-hyb">
 											<label for="cNumBsmt"># of Basements</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumBsmt]" id="cNumBsmt" class="used-in-calc"> 
+											<input type="number" min="0" step="1" name="quote[Nb_Basement]" id="cNumBsmt" class="used-in-calc"> 
 										</div>
 									</div>
 									
 									<div class="row">
 										<div class="col-md-4 r-form r-form-com r-form-cor r-form-hyb">
 											<label for="cNumPark"># of parking spaces</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumPark]" id="cNumPark">
+											<input type="number" min="0" step="1" name="quote[Nb_Parking]" id="cNumPark">
 										</div>
 										<div class="col-md-4 r-form r-form-com">
 											<label for="cNumElev"># of Elevator Cages</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumElev]" id="cNumElev" class="used-in-calc">
+											<input type="number" min="0" step="1" name="quote[Nb_Cage]" id="cNumElev" class="used-in-calc">
 										</div>
 										<div class="col-md-4 r-form r-form-cor r-form-hyb">
 											<label for="cNumOcc"># of 🧑 per Floor</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumOcc]" id="cNumOcc" class="used-in-calc">
+											<input type="number" min="0" step="1" name="quote[Nb_OccupantPerFloor]" id="cNumOcc" class="used-in-calc">
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-2 r-form r-form-hyb">
 											<label for="actHours">Active Hours/day</label>
-											<select id="actHours" class="form-control pointer" name="quote-form[actHours]">
+											<select id="actHours" class="form-control pointer" name="quote[Nb_OpperatingHour]">
 												<option value="">-Select-</option>
 											</select>
 										</div>
@@ -273,15 +274,15 @@
 										<div class="col-md-12 r-form r-form-elev">
 											<label>Product: </label>
 											<label class="radio" for="quote-form:std">
-												<input class="radio-prod" type="radio" name="radio-btn" value="std" id="quote-form:std">
+												<input class="radio-prod" type="radio" name="quote[Product_Grade]" value="std" id="quote-form:std">
 												<i></i> Standard
 											</label>
 											<label class="radio" for="quote-form:prem">
-												<input class="radio-prod" type="radio" name="radio-btn" value="prem" id="quote-form:prem">
+												<input class="radio-prod" type="radio" name="quote[Product_Grade]" value="prem" id="quote-form:prem">
 												<i></i> Premium
 											</label>
 											<label class="radio" for="quote-form:exc">
-												<input class="radio-prod" type="radio" name="radio-btn" value="exc" id="quote-form:exc">
+												<input class="radio-prod" type="radio" name="quote[Product_Grade]" value="exc" id="quote-form:exc">
 												<i></i> Excelium
 											</label>
 										</div>
@@ -343,16 +344,20 @@
 										</span>
 										<hr />
 
-										<a href="#" class="btn btn-primary btn-lg btn-block fs-15"><i class="fa fa-mail-forward"></i>Checkout</a>
+										
 									</div>
 								</div>
 							</div>
 						</div>
+						<a href="#" class="btn btn-primary btn-lg btn-block fs-15"><i class="fa fa-mail-forward"></i>Checkout</a>
+					
+					
 						<!-- /RIGHT -->
 
 					</div>
 
 				</div>
+					<button id="submitbutton" class="bbtn btn-primary btn-lg btn-block fs-15" type="submit">SUBMIT QUOTE &nbsp; <i class="fa fa-angle-right"></i></button>
 			</section>
 			<!-- /FORM -->
 
@@ -438,6 +443,23 @@
 		<!-- JAVASCRIPT FILES -->
         <%= javascript_include_tag "scripts" %>
         <%= javascript_include_tag "calculator" %>
+		<script>
+				$("#requestform").submit(function(event){
+					event.preventDefault(); //prevent default action 
+					var post_url = $(this).attr("action"); //get form action url
+					var request_method = $(this).attr("method"); //get form GET/POST method
+					var form_data = $(this).serialize(); //Encode form elements for submission
+					
+					$.ajax({
+						url : post_url,
+						type: request_method,
+						data : form_data
+					}).done(function(response){ //
+						alert('YOUR SUBMISSION HAVE BEEN RECEIVED');
+						window.location="/";
+					});
+				});
+			</script>
 
 	</body>
 </html>

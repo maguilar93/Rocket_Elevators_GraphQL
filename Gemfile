@@ -30,7 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # bootstrap 
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
-
+gem 'rails-assets-jquery', source:'http://rails-assets.org'
+gem 'rails-assets-datatables', source:'http://rails-assets.org'
 gem "font-awesome-rails"
 gem 'font-awesome-sass', '~> 5.12.0'
 

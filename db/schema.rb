@@ -47,8 +47,7 @@ ActiveRecord::Schema.define(version: 2020_03_04_213033) do
     t.integer "Nb_OccupantPerFloor"
     t.integer "Nb_OpperatingHour"
     t.string "Final_Price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+   
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
