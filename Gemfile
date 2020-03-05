@@ -44,7 +44,7 @@ gem 'font-awesome-sass', '~> 5.12.0'
 gem 'owlcarousel-rails', '~> 1.1', '>= 1.1.3.3'
 
 # Mix it up gem
-gem 'mixitup-rails', '~> 3.3', '>= 3.3.1'
+gem 'mixitup-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
