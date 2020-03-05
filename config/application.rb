@@ -16,6 +16,15 @@ module Elevatorsrails
 
     # config.assets.paths << Rails.root.join("app", "assets", "javascripts", "plugins", "slider.revolution", "js")
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    config.assets.paths << Rails.root.join("app", "assets", "javascripts", "plugins", "bootstrap","css")
+    config.assets.paths << Rails.root.join("app", "assets", "javascripts", "plugins", "jquery")
+
+    config.assets.paths << Rails.root.join("app", "assets", "javascripts", "plugins", "owl-carousel")
+    config.assets.paths << Rails.root.join("app", "assets", "javascripts", "plugins", "magnific-popup")
+    config.assets.paths << Rails.root.join("app", "assets", "javascripts", "plugins", "mixitup")
+    config.assets.paths << Rails.root.join("app", "assets", "javascripts", "plugins" )
+
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
 
