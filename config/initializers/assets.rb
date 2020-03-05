@@ -25,7 +25,7 @@ Rails.application.config.assets.precompile += %w( plugins/bootstrap/css/bootstra
 Rails.application.config.assets.precompile += %w( plugins/slider.revolution/css/extralayers.css )
 Rails.application.config.assets.precompile += %w( plugins/slider.revolution/css/settings.css )
 
-
+Rails.application.config.assets.precompile += %w( demo.js )
 Rails.application.config.assets.precompile += %w( contact.js )
 Rails.application.config.assets.precompile += %w( scripts.js )
 Rails.application.config.assets.precompile += %w( calculator.js )
@@ -34,14 +34,19 @@ Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/j
 
 #reda add that
 Rails.application.config.assets.precompile += %w( demo.revolution_slider.js )
+
 Rails.application.config.assets.precompile += %w( plugins/smoothscroll.js )
 Rails.application.config.assets.precompile += %w( demo.portfolio_ajax.js )
-###############
+
 Rails.application.config.assets.precompile += %w( plugins/jquery.nav.js)
 
+Rails.application.config.assets.precompile += %w( demo.portfolio_ajax.js )
 
 Rails.application.config.assets.precompile += %w( plugins/jquery.nav.min.js )
 Rails.application.config.assets.precompile += %w( plugins/jquery/jquery-3.3.1.min.js )
 Rails.application.config.assets.precompile += %w( plugins/smoothscroll.js )
+Rails.application.config.assets.precompile += %w( plugins/mixitup/jquery.mixitup.min.js )
+Rails.application.config.assets.precompile += %w( plugins/bootstrap/css/bootstrap.min.css )
+
 
 
