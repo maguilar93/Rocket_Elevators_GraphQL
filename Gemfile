@@ -31,11 +31,20 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 
+gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 5.12.0'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# OwlCarousel gem
+gem 'owlcarousel-rails', '~> 1.1', '>= 1.1.3.3'
+
+# Mix it up gem
+gem 'mixitup-rails', '~> 3.3', '>= 3.3.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

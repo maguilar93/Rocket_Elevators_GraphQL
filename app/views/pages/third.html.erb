@@ -91,16 +91,42 @@
 		</section>
 		<!-- /PAGE HEADER -->
 
-		<!-- CART -->
-		<section>
-			<div class="container">
+					<!-- FEATURED BOXES 3 -->
+					<div class="row">
+						<div class="col-md-4 col-6">
+							<div class="text-center">
+								<h4>Award Winner</h4>
+							</div>
+						</div>
+						<div class="col-md-4 col-6">
+							<div class="text-center">
+								<h4>Engineered by the Best</h4>
+							</div>
+						</div>
+						<div class="col-md-4 col-6">
+							<div class="text-center">
+								<h4>Very Accurate Build</h4>
+							</div>
+						</div>
+					</div>
+					<!-- /FEATURED BOXES 3 -->
 
-				<!-- CHECKOUT -->
-				<%= form_with(model: @quote, local: true) do |form| %>
-
-					<div class="col-lg-7 col-sm-7">
-						<div class="heading-title">
-							<h1>Ready for a quote?</h1>
+					<!-- FEATURED BOXES 3 -->
+					<div class="row">
+						<div class="col-md-4 col-6">
+							<div class="text-center">
+								<h4>Sturdy</h4>
+							</div>
+						</div>
+						<div class="col-md-4 col-6">
+							<div class="text-center">
+								<h4>Best Music</h4>
+							</div>
+						</div>
+						<div class="col-md-4 col-6">
+							<div class="text-center">
+								<h4>Free Wifi</h4>
+							</div>
 						</div>
 
 						<!---------------------------------------------START--------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -153,51 +179,16 @@
 									</div>
 								</div>
 
-								<!----------------------------------------Com----------------------------------------------------------------------------------------------------------------------------------------------------->
-								<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-								<div id="comQ">
-
-									<div class="row">
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">How Many Separate Businesses? *</label>
-											<input id="NbBusiCom" name="NbBusiCom" novalidate novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCom()"
-											 onchange="CalcCom()" oninput="validity.valid||(value='')"; />
-										</div>
-
-									</div>
-									<div class="row">
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">How Many Floor? *</label>
-											<input id="NbStageCom" name="NbStageCom" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCom()"
-											 onchange="CalcCom()" oninput="validity.valid||(value='')";/>
-										</div>
-
-									</div>
-
-									<div class="row">
-
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">How Many Basement? *</label>
-											<input id="NbSsCom" name="NbSsCom" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCom()"
-											 onchange="CalcCom()" oninput="validity.valid||(value='')";/>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">How Many Parking? *</label>
-											<input id="NbParkCom" name="NbParkCom" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCom()"
-											 onchange="CalcCom()" oninput="validity.valid||(value='')"; />
-										</div>
-
-									</div>
-									<div class="row">
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">How Many Lift Cages To Deploy? *</label>
-											<input id="NbCageCom" name="NbCageCom" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCom()" onchange="CalcCom()"oninput="validity.valid||(value='')"; />
-										</div>
-
-									</div>
-								</div>
+			<!-- -->
+			<section class="alternate">
+				<div class="container">
+					
+					<div class="text-center">
+						<h2 class="wow fadeInUp m-0" data-wow-delay="0.3s">DID WE CONVINCE YOU?</h2>
+						<div class="mt-30">
+							<a class="btn btn-info btn-lg" href="quote-form.html">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>	
+						</div>
+					</div>
 
 								<!---------------------------------------------------------------------Corporate------------------------------------------------------------------------------------------------------------------------>
 								<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -393,10 +384,6 @@
 
         		<!-- JAVASCRIPT FILES -->
         <%= javascript_include_tag "scripts" %>	
-
-		<%= javascript_include_tag "plugins/jquery.nav" %>
-		<%= javascript_include_tag "plugins/smoothscroll" %>
-		<%= javascript_include_tag "demo.portfolio_ajax" %>
 
 	</body>
 </html>

@@ -22,3 +22,4 @@
 //= require plugins/slider.revolution/js/jquery.themepunch.tools.min
 //= require plugins/slider.revolution/js/jquery.themepunch.revolution.min
 //= require demo.revolution_slider
+//= require plugins/jquery/jquery-3.3.1.min.js
