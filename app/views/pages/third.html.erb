@@ -24,298 +24,372 @@
 	</head>
 
 	<body id="top" class="smoothscroll enable-animation grain-blue">
+     <body class="smoothscroll enable-animation">
 
-		<div id="wrapper">
+	<!-- SLIDE TOP -->
+	<div id="slidetop">
 
-			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+		<div class="container">
 
-				<!-- TOP NAV -->
-				<header id="topNav">
-					<div class="container">
+			<div class="row">
 
-						<!-- Mobile Menu Button -->
-						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-							<i class="fa fa-bars"></i>
-						</button>
+				<div class="col-md-4">
+					<h6><i class="icon-heart"></i> Why Rocket ELevators?</h6>
+					<p>We are a reliable company since 1976. We care about our customers satisfaction and provide professional quality
+						elevators. A professional team is at your service for any request or advice. </p>
+				</div>
 
-						<!-- Logo -->
-						<a class="logo float-left" href="#top">
-							<%= image_tag("R2.png",:class => "logo float-left", :alt => "Rocket Elevators Logo") %>
-						</a>
+				<div class="col-md-4">
+					<h6><i class="fa-facheck"></i> AWARDS</h6>
+					<ul class="list-unstyled">
+						<li><i class="fa fa-angle-right"></i> Security Award</a></li>
+						<li><i class="fa fa-angle-right"></i> The Aga Khan Award</a></li>
+						<li><i class="fa fa-angle-right"></i> The Index Award</a></li>
+						<li><i class="fa fa-angle-right"></i> The Best Innovation Award</a></li>
 
-						<!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
-						<div class="navbar-collapse collapse float-right nav-main-collapse">
-							<nav class="nav-main">
+					</ul>
+				</div>
 
-								<!-- 
-									.nav-onepage
-									Required for onepage navigation links
-									
-									Add .external for an external link!
-								-->
-								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active"><!-- HOME -->
-										<a href="index.html">
-											HOME
-										</a>
-									</li>
-									<li class="dropdown"><!-- SERVICES -->
-										<a class="dropdown-toggle" href="index.html#services">
-											SERVICES
-										</a>
-										<ul class="dropdown-menu">
-											<li>
-												<a href="#">RESIDENTIAL</a>
-											</li>
-											<li>
-												<a href="landing-cor.html">CORPORATE</a>
-											</li>
-											<li>
-												<a href="quote-form.html">GET QUOTE</a>
-											</li>
-										</ul>
-									</li>
-									<li><!-- WORK -->
-										<a href="index.html#work">
-											PORTFOLIO
-										</a>
-									</li>
-									<li><!-- NEWS -->
-										<a href="index.html#news">
-											NEWS
-										</a>
-									</li>
-									<li><!-- CLIENTS -->
-										<a href="index.html#customers">
-											CLIENTS
-										</a>
-									</li>
-									<li><!-- CONTACT -->
-										<a href="index.html#contact">
-											CONTACT
-										</a>
-									</li>
-								</ul>
-
-							</nav>
-						</div>
-
-					</div>
-				</header>
-				<!-- /Top Nav -->
+				<div class="col-md-4">
+					<h6><i class="icon-envelope"></i> CONTACT INFO</h6>
+					<ul class="list-unstyled">
+						<li><b>Address:</b> 725 Boulevard Lebourgneuf, QC G2J 0C4<br /> Quebec, Canada</li>
+						<li><b>Phone:</b> 418-580-7055</li>
+						<li><b>Email:<a href="RocketElevators@Codeboxx.biz"> RocketElevators@Codeboxx.biz</a></b></li>
+					</ul>
+				</div>
 
 			</div>
-
-			<!-- Parallax Ribbon -->
-			
-			<section class="parallax parallax-1" style="background-image: url(<%= asset_url("AdobeStock_179073967.jpeg") %>); height:600px;"> 
-
-				<div class="overlay dark-3"><!-- dark overlay [1 to 9 opacity] --></div>
-
-				<div class="container-fluid">
-
-					<div class="text-center">
-						<h1 class="m-0 fs-50 fw-300 wow fadeInUp" data-wow-delay="0.4s">Residential Elevators</h1>
-						<p class="lead fs-30 wow fadeInUp" data-wow-delay="0.7s">All you need to know about them.</p>
-						<br /><br /><br /><br /><br /><br /><br />
-						<div class="mt-30">
-							<a class="btn btn-info btn-lg" href="quote-form.html">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>	
-						</div>
-					</div>
-
-				</div>
-			</section>
-			<!-- /Parallax Ribbon-->
-			
-			<!-- HOME -->
-			<section id="home">
-				<div class="container text-center">
-					<div class="row text-left">
-						<div class="col-md-8 col-sm-12 mb-30">
-							<!-- <img class="img-fluid" src="new_assets/thumbnail_AdobeStock_33298664.jpeg" alt="product image" /> -->
-                            <%= image_tag("thumbnail_AdobeStock_33298664", :class => "img-fluid", :alt => "product image") %>
-
-						</div>
-						<div class="col-md-4 col-sm-12">
-							<h3 class="fw-300">Elevator <span>Overview</span></h3>
-							<p>The greatest elevators built out of military grade material and engineered by the best of the bests.</p>
-							<p>These elevator are designed to fit your residential complex aesthetically and they also have the best elevator music.</p>
-							<hr />
-							<ul class="list-unstyled list-icons">
-								<li><i class="fa fa-check"></i> Military Grade</li>
-								<li><i class="fa fa-check"></i> Great Music</li>
-								<li><i class="fa fa-check"></i> Sensational Buttons</li>
-								<li><i class="fa fa-check"></i> Visually pleasing</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- /HOME -->
-
-
-			<!-- FEATURES -->
-			<section id="features" class="pt-30">
-				<div class="container-fluid">
-
-					<header class="text-center">
-						<h2>Our Features</h2>
-						<hr />
-					</header>
-
-					<!-- FEATURED BOXES 3 -->
-					<div class="row">
-						<div class="col-md-4 col-6">
-							<div class="text-center">
-								<i class="ico-light ico-lg ico-rounded ico-hover et-trophy"></i>
-								<h4>Award Winner</h4>
-							</div>
-						</div>
-						<div class="col-md-4 col-6">
-							<div class="text-center">
-								<i class="ico-light ico-lg ico-rounded ico-hover et-gears"></i>
-								<h4>Engineered by the Best</h4>
-							</div>
-						</div>
-						<div class="col-md-4 col-6">
-							<div class="text-center">
-								<i class="ico-light ico-lg ico-rounded ico-hover et-tools"></i>
-								<h4>Very Accurate Build</h4>
-							</div>
-						</div>
-					</div>
-					<!-- /FEATURED BOXES 3 -->
-
-					<!-- FEATURED BOXES 3 -->
-					<div class="row">
-						<div class="col-md-4 col-6">
-							<div class="text-center">
-								<i class="ico-light ico-lg ico-rounded ico-hover et-shield"></i>
-								<h4>Sturdy</h4>
-							</div>
-						</div>
-						<div class="col-md-4 col-6">
-							<div class="text-center">
-								<i class="ico-light ico-lg ico-rounded ico-hover et-video"></i>
-								<h4>Best Music</h4>
-							</div>
-						</div>
-						<div class="col-md-4 col-6">
-							<div class="text-center">
-								<i class="ico-light ico-lg ico-rounded ico-hover et-rss"></i>
-								<h4>Free Wifi</h4>
-							</div>
-						</div>
-					</div>
-					<!-- /FEATURED BOXES 3 -->
-
-				</div>
-			</section>
-			<!-- /FEATURES -->
-
-
-			<!-- -->
-			<section class="alternate">
-				<div class="container">
-					
-					<div class="text-center">
-						<h2 class="wow fadeInUp m-0" data-wow-delay="0.3s">DID WE CONVINCED YOU?</h2>
-						<div class="mt-30">
-							<a class="btn btn-info btn-lg" href="quote-form.html">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>	
-						</div>
-					</div>
-
-				</div>
-			</section>
-			<!-- / -->
-
-
-			<!-- FOOTER -->
-			<footer id="footer">
-				<div class="container-fluid">
-
-
-					<div class="row">
-
-						<!-- col #1 -->
-						<div class="col-md-8">
-
-							<h3 class="letter-spacing-1">WHY US?</h3>
-
-							<!-- Small Description -->
-							<p>
-								Ask our customers and you will know why you will want our elevators. <br />
-								Alternatively, call us and we'll answer your questions.
-							</p>
-							<h2>(581) 701-0303</h2>
-						</div>
-						<!-- /col #1 -->
-
-						<!-- col #2 -->
-						<div class="col-md-4">
-							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
-
-							<!-- Newsletter Form -->
-							<p>Subscribe to Our (non-existant) Newsletter to get Important News & Offers (to come)</p>
-
-							<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-									<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
-									<span class="input-group-btn">
-										<button class="btn btn-success" type="submit">Subscribe</button>
-									</span>
-								</div>
-							</form>
-							<!-- /Newsletter Form -->
-
-
-						</div>
-						<!-- /col #2 -->
-
-					</div>
-
-
-				</div>
-
-				<div class="copyright">
-					<div class="container">
-						<ul class="float-right m-0 list-inline mobile-block">
-							<li>Terms &amp; Conditions</li>
-							<li>&bull;</li>
-							<li>Privacy</li>
-						</ul>
-						&copy; All Rights Reserved, Rocket Elevators LTD
-					</div>
-				</div>
-
-			</footer>
-			<!-- /FOOTER -->
 
 		</div>
-		<!-- /wrapper -->
 
+		<a class="slidetop-toggle" href="#">
+			<!-- toggle button --></a>
 
-		<!-- SCROLL TO TOP -->
-		<a href="#" id="toTop"></a>
+	</div>
+	<!-- /SLIDE TOP -->
 
+	<!-- wrapper -->
+	<div id="wrapper">
 
-		<!-- PRELOADER -->
-		<div id="preloader">
-			<div class="inner">
-				<span class="loader"></span>
+		<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+
+			
 			</div>
-		</div><!-- /PRELOADER -->
+			<!-- /Top Nav -->
+
+		<!-- /PAGE HEADER -->
+
+		<!-- CONTACT -->
+		<section class="page-header page-header-xs">
+			<div class="container">
+
+				<h1>QUOTES</h1>
+
+				<!-- breadcrumbs -->
+			</div>
+		</section>
+		<!-- /PAGE HEADER -->
+
+		<!-- CART -->
+		<section>
+			<div class="container">
+
+				<!-- CHECKOUT -->
+				<%= form_with(model: @quote, local: true) do |form| %>
+
+					<div class="col-lg-7 col-sm-7">
+						<div class="heading-title">
+							<h1>Ready for a quote?</h1>
+						</div>
+
+						<!---------------------------------------------START--------------------------------------------------------------------------------------------------------------------------------------------------->
+						<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+						<!-- BILLING -->
+						<fieldset class="mt-60">
+							<div class="row">
+								<div class="col-md-6">
+									<label for="contact_department"> Which Building Type? *</label>
+									<select id="building_type" class="form-control pointer" name="department">
+										<option id="Non" value="None">--- Select ---</option>
+										<option id="Rsl" value="Residential">Residential</option><!-- //11 addR -->
+										<option id="Cml" value="Commercial">Commercial</option><!-- //10 -->
+										<option id="Crp" value="Corporate">Corporate</option><!-- //9 -->
+										<option id="Hyb" value="Hybrid">Hybrid</option><!-- //7 string-->
+									</select><br>
+									<p><strong>Which Elevator Class? *</strong></p>
+									<input type="radio" name="Check" value="standard" onclick="checkRadiovalue()" checked> Standard
+									<input type="radio" name="Check" value="premium" onclick="checkRadiovalue()"> Premium
+									<input type="radio" name="Check" value="excelium" onclick="checkRadiovalue()"> Excelium
+								</div>
+
+							</div>
+							<div>
+								<!----------------------------------------------residential--------------------------------------------------------------------------------------------------------------------------------------------------->
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+								<div id="resiQ">
+
+									<div class="row">
+										<div class="col-md-12 col-sm-6">
+											<label for="ApartRes">How Many Appartement? *</label>
+											<input id="NbApartRes" name="NbApartRes" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcRes()" onchange="CalcRes()" oninput="validity.valid||(value='')";/>
+										</div>
+
+									</div>
+									<div class="row">
+										<div class="col-md-12 col-sm-6">
+											<label for="FloorRes">How Many Floor? *</label>
+											<input id="NbStageRes" name="NbStageRes"  novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcRes()" onchange="CalcRes()" oninput="validity.valid||(value='')"; />
+										</div>
+
+									</div>
+
+									<div class="row">
+
+										<div class="col-md-12 col-sm-6">
+											<label for="SsRes">How Many Basement? *</label>
+											<input id="NbSsRes" name="NbSsRes" novalidate type="number" novalidate class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcRes()" onchange="CalcRes()" oninput="validity.valid||(value='')"; />
+										</div>
+									</div>
+								</div>
+
+								<!----------------------------------------Com----------------------------------------------------------------------------------------------------------------------------------------------------->
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+								<div id="comQ">
+
+									<div class="row">
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">How Many Separate Businesses? *</label>
+											<input id="NbBusiCom" name="NbBusiCom" novalidate novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCom()"
+											 onchange="CalcCom()" oninput="validity.valid||(value='')"; />
+										</div>
+
+									</div>
+									<div class="row">
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">How Many Floor? *</label>
+											<input id="NbStageCom" name="NbStageCom" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCom()"
+											 onchange="CalcCom()" oninput="validity.valid||(value='')";/>
+										</div>
+
+									</div>
+
+									<div class="row">
+
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">How Many Basement? *</label>
+											<input id="NbSsCom" name="NbSsCom" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCom()"
+											 onchange="CalcCom()" oninput="validity.valid||(value='')";/>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">How Many Parking? *</label>
+											<input id="NbParkCom" name="NbParkCom" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCom()"
+											 onchange="CalcCom()" oninput="validity.valid||(value='')"; />
+										</div>
+
+									</div>
+									<div class="row">
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">How Many Lift Cages To Deploy? *</label>
+											<input id="NbCageCom" name="NbCageCom" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCom()" onchange="CalcCom()"oninput="validity.valid||(value='')"; />
+										</div>
+
+									</div>
+								</div>
+
+								<!---------------------------------------------------------------------Corporate------------------------------------------------------------------------------------------------------------------------>
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+								<div id="corpQ">
+
+									<div class="row">
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">How Many separate tenant companies? *</label>
+											<input id="NbBusiCorp" name="NbBusiCorp" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCorp()"
+											 onchange="CalcCorp()" oninput="validity.valid||(value='')"; />
+										</div>
+
+									</div>
+									<div class="row">
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">How Many Floor? *</label>
+											<input id="NbStageCorp" name="NbStageCorp" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCorp()"
+											 onchange="CalcCorp()" oninput="validity.valid||(value='')"; />
+										</div>
+
+									</div>
+
+									<div class="row">
+
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">How Many Basement? *</label>
+											<input id="NbSsCorp" name="NbSsCorp" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCorp()"
+											 onchange="CalcCorp()" oninput="validity.valid||(value='')";/>
+										</div>
+									</div>
+									<div class="row">
+
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">How Many Parking? *</label>
+											<input id="NbParkCorp" name="NbParkCorp" type="number" novalidate class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCorp()" onchange="CalcCorp()" oninput="validity.valid||(value='')"; />
+										</div>
+									</div>
+									<div class="row">
+
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">What Is The Maximum Number Of Occupants Per Floor? *</label>
+											<input id="MaxOccCorp" name="MaxOccCorp" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCorp()"
+											 onchange="CalcCorp()" oninput="validity.valid||(value='')";/>
+										</div>
+									</div>
+								</div>
+								<!--------------------hybride-------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+								<div id="hybQ">
+
+									<div class="row">
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">How Many Separate Businesses? *</label>
+											<input id="NbBusiHyb" name="NbBusiHyb" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcHyb()"
+											 onchange="CalcHyb()" oninput="validity.valid||(value='')"; />
+										</div>
+
+									</div>
+									<div class="row">
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">How Many Floor? *</label>
+											<input id="NbStageHyb" name="NbStageHyb" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcHyb()"
+											 onchange="CalcHyb()" oninput="validity.valid||(value='')"; />
+										</div>
+
+									</div>
+
+									<div class="row">
+
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">How Many Basement? *</label>
+											<input id="NbSsHyb" name="NbSsHyb" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcHyb()" onchange="CalcHyb()" oninput="validity.valid||(value='')"; />
+										</div>
+									</div>
+									<div class="row">
+
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">How Many Parking? *</label>
+											<input id="NbParkHyb" name="NbParkHyb" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcHyb()"
+											 onchange="CalcHyb()" oninput="validity.valid||(value='')"; />
+										</div>
+									</div>
+									<div class="row">
+
+										<div class="col-md-12 col-sm-6">
+											<label for="billing_email">What Is The Maximum Number Of Occupants Per Floor? *</label>
+											<input id="MaxOccHyb" name="MaxOccHyb" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcHyb()"
+											 onchange="CalcHyb()" oninput="validity.valid||(value='')"; />
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4">
+											<label for="contact_department">Opening Hours Of The Building? *</label>
+											<input id="OppHourHyb" name="OppHourHyb" novalidate type="number" class="form-control novalidate rst" min="1" max="24" onkeyup="CalcHyb()"
+											 onchange="CalcHyb()" oninput="validity.valid||(value='')"; />
+											
+										</div>
+
+									</div>
+
+								</div>
+
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+								<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+						</fieldset>
+						<!-- /BILLING -->
+
+						<!-- /SHIPPING -->
+
+					</div>
 
 
-		<!-- JAVASCRIPT FILES -->
-	<!--	<script>var plugin_path = 'assets/plugins/';</script>
-		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script> -->
+
+					<div class="col-lg-5 col-sm-5">
+						<div class="heading-title">
+							<h2 style="position: relative;text-align:'center';">OUR PRICES</h2>
+						</div>
+
+
+						<!-- Quote -->
+						<fieldset id="ccPayment" class="mt-30 hide">
+
+							<div class="toggle-transparent toggle-bordered-full clearfix">
+								<div class="toggle active">
+									<div class="toggle-content">
+
+						
+						
+									</fieldset>
+						<!-- /CREDIT CARD PAYMENT -->
+
+
+						<!-- TOTAL / PLACE ORDER -->
+						<div class="toggle-transparent toggle-bordered-full clearfix">
+							<div class="toggle active">
+								<div class="toggle-content">
+
+									<span class="clearfix">
+										<span id="totalele" class="float-right">0</span>
+                                        <input id="TotalElevators" name="nb_of_column" class="float-right" type="hidden" value="">
+
+										<span class="float-left"><strong>Total Elevators:</strong></span>
+									</span>
+									<span class="clearfix">
+										<span id="perc" class="float-right">10%</span>
+										<span class="float-left">Installation Fees:</span>
+									</span>
+
+									<hr />
+
+									<span class="clearfix">
+										<span id="totalfin" class="float-right fs-20">0.00$</span>
+                                        <input id="TotalFinal" name="nb_of_column" lass="float-right fs-20" type="hidden" value="">
+										<strong class="float-left"><u>TOTAL:</u></strong>
+									</span>
+
+									<hr />
+									<input type="text" name="Full Name" class="form-control" placeholder="Full Name" required>
+                                    <input type="text" name="Phone Number" class="form-control" placeholder="Phone Number" required>
+									<button type="submit"class="btn btn-primary btn-lg btn-block fs-15" >Send Quote Now</button>
+									
+								</div>
+							</div>
+						</div>
+						<!-- /TOTAL / PLACE ORDER -->
+						</form>
+						
+						</span>
+						
+					</div>
+					
+                    
+				<% end %>
+			</div>
+		</section>
+	</div>
+	<!-- /CHECKOUT -->
+	<!-- /CART -->
+
+
+	<!-- /FOOTER -->
+
+	<!-- /wrapper -->
+
+	<!-- SCROLL TO TOP -->
+	<a href="#" id="toTop"></a>
+		
+
+
+	
 
         		<!-- JAVASCRIPT FILES -->
         <%= javascript_include_tag "scripts" %>	
