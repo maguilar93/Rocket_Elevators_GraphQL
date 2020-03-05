@@ -10,11 +10,9 @@ module Elevatorsrails
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
-
+    config.assets.enabled = true
     config.assets.paths << Rails.root.join('.app/assets/javascripts/plugins')
-    # config.assets.paths << Rails.root.join('.app/assets/stylesheets/plugins')
 
-    # config.assets.paths << Rails.root.join("app", "assets", "javascripts", "plugins", "slider.revolution", "js")
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     config.assets.paths << Rails.root.join("app", "assets", "javascripts", "plugins", "bootstrap","css")

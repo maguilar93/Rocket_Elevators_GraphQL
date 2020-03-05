@@ -1,443 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<title>Rocket Elevators - Quote Request Form</title>
-		<meta name="description" content="" />
-		<meta name="Author" content="J.L." />
-
-		<!-- mobile settings -->
-		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
-		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-
-		<!-- WEB FONTS : use %7C instead of | (pipe) -->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
-		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" type="text/css" />
-
-		<!-- CORE CSS
-		<link href="assets/javascripts/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-		 -->
-
-		<!-- THEME CSS
-		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
-         -->
-        <%= stylesheet_link_tag "essentials" %>
-        <%= stylesheet_link_tag "layout" %>
-
-		<!-- PAGE LEVEL SCRIPTS
-		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
-         -->
-         <%= stylesheet_link_tag "header-1" %>
-         <%= stylesheet_link_tag "blue" %>
-
-		<style>
-			html * {
-				font-family: 'Roboto','et-line','FontAwesome' !important;
-			}
-		</style>
-
 	</head>
 
-	<!--
-		AVAILABLE BODY CLASSES:
-		
-		smoothscroll 			= create a browser smooth scroll
-		enable-animation		= enable WOW animations
-
-		bg-grey					= grey background
-		grain-grey				= grey grain background
-		grain-blue				= blue grain background
-		grain-green				= green grain background
-		grain-blue				= blue grain background
-		grain-orange			= orange grain background
-		grain-yellow			= yellow grain background
-		
-		boxed 					= boxed layout
-		pattern1 ... patern11	= pattern background
-		menu-vertical-hide		= hidden, open on click
-		
-		BACKGROUND IMAGE [together with .boxed class]
-		data-background="assets/images/_smarty/boxed_background/1.jpg"
-	-->
 	<body class="smoothscroll enable-animation grain-blue">
-
-		<!-- wrapper -->
-		<div id="wrapper">
-			<div id="header" class="navbar-toggleable-md sticky clearfix">
-				<!-- TOP NAV -->
-				<header id="topNav">
-					<div class="container">
-
-						<!-- Mobile Menu Button -->
-						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-							<i class="fa fa-bars"></i>
-						</button>
-
-						<!-- Logo -->
-						<a class="logo float-left" href="index.html">
-							<%= image_tag("R2", :alt => "Rocket Elevators Logo") %>
-						</a>
-
-						<!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
-						<div class="navbar-collapse collapse float-right nav-main-collapse">
-							<nav class="nav-main">
-
-								<!-- 
-									.nav-onepage
-									Required for onepage navigation links
-									
-									Add .external for an external link!
-								-->
-								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active"><!-- HOME -->
-										<a href="first">
-											HOME
-										</a>
-									</li>
-									<li class="dropdown"><!-- SERVICES -->
-										<a class="dropdown-toggle" href="index.html#services">
-											SERVICES
-										</a>
-										<ul class="dropdown-menu">
-											<li>
-												<a href="third">RESIDENTIAL</a>
-											</li>
-											<li>
-												<a href="second">CORPORATE</a>
-											</li>
-											<li>
-												<a href="quoteoform">GET QUOTE</a>
-											</li>
-										</ul>
-									</li>
-									<li><!-- WORK -->
-										<a href="first#work">
-											PORTFOLIO
-										</a>
-									</li>
-									<li><!-- NEWS -->
-										<a href="first#news">
-											NEWS
-										</a>
-									</li>
-									<li><!-- CLIENTS -->
-										<a href="first#customers">
-											CLIENTS
-										</a>
-									</li>
-									<li><!-- CONTACT -->
-										<a href="first#contact">
-											CONTACT
-										</a>
-									</li>
-								</ul>
-
-							</nav>
-						</div>
-
-					</div>
+		<!-- FORM -->
+		<section id="requestform">
+			<div class="container">
+				<header class="text-center mb-60">
+					<h2>Request a Quote</h2>
+					<hr />
 				</header>
-				<!-- /Top Nav -->
-			</div>
 
+				<div class="row">
+					<!-- FORM -->
+					<div class="col-md-8 col-sm-8">
+						<h3>Request Form: </h3>
+						<!-- Quote Form -->
+						<form id="quote-form" action="" method="post" enctype="text/plain">
+							<fieldset>
+								<div class="row">
+									<div class="col-md-4">
+										<label for="buildingSelect">Building Type: </label>
+										<select id="buildingSelect" required class="form-control pointer" name="quote-form[buildingSelect]">
+											<option value="">--- Select ---</option>
+											<option value="Residential">Residential</option>
+											<option value="Commercial">Commercial</option>
+											<option value="Corporate">Corporate</option>
+											<option value="Hybrid">Hybrid</option>
+										</select>
+									</div>
+								</div>
 
-			<!-- FORM -->
-			<section id="requestform">
-				<div class="container">
-
-					<header class="text-center mb-60">
-						<h2>Request a Quote</h2>
-						<hr />
-					</header>
-
-					<div class="row">
-						<!-- FORM -->
-						<div class="col-md-8 col-sm-8">
-
-							<h3>Request Form: </h3>
-							<!--
-								MESSAGES
+								<div class="row">
+									<div class="col-md-4 r-form r-form-res">
+										<label for="cNumApt"># of Apartments</label>
+										<input type="number" min="0" step="1" name="quote-form[cNumApt]" id="cNumApt" class="used-in-calc">
+									</div>
+									<div class="col-md-4 r-form r-form-com r-form-hyb">
+										<label for="cNumBsns"># of Business</label>
+										<input type="number" min="0" step="1" name="quote-form[cNumBsns]" id="cNumBsns">
+									</div>
+									<div class="col-md-4 r-form r-form-cor">
+										<label for="cNumCom"># of Companies</label>
+										<input type="number" min="0" step="1" name="quote-form[cNumCom]" id="cNumCom">
+									</div>
+									<div class="col-md-4 r-form r-form-res r-form-com r-form-cor r-form-hyb">
+										<label for="cNumFlr"># of Floors</label>
+										<input type="number" min="0" step="1" name="quote-form[cNumFlr]" id="cNumFlr" class="used-in-calc">
+									</div>
+									<div class="col-md-4 r-form r-form-res r-form-com r-form-cor r-form-hyb">
+										<label for="cNumBsmt"># of Basements</label>
+										<input type="number" min="0" step="1" name="quote-form[cNumBsmt]" id="cNumBsmt" class="used-in-calc"> 
+									</div>
+								</div>
 								
-									How it works?
-									The form data is posted to php/contact.php where the fields are verified!
-									php.contact.php will redirect back here and will add a hash to the end of the URL:
-										#alert_success 		= email sent
-										#alert_failed		= email not sent - internal server error (404 error or SMTP problem)
-										#alert_mandatory	= email not sent - required fields empty
-										Hashes are handled by assets/js/contact.js
-
-									Form data: required to be an array. Example:
-										contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
-										Also, add `required` to input fields if is a mandatory field. 
-										Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
-
-									PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
-												 ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
-
-									WARNING! Do not change the `email` and `name`!
-												contact[name][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-												contact[email][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-							-->
-
-							<!-- Alert Success -->
-							<div id="alert_success" class="alert alert-success mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Thank You!</strong> Your message successfully sent!
-							</div><!-- /Alert Success -->
-
-
-							<!-- Alert Failed -->
-							<div id="alert_failed" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>[SMTP] Error!</strong> Internal server error!
-							</div><!-- /Alert Failed -->
-
-
-							<!-- Alert Mandatory -->
-							<div id="alert_mandatory" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
-							</div><!-- /Alert Mandatory -->
-
-							<!-- Quote Form -->
-							<form id="quote-form" action="" method="post" enctype="text/plain">
-								<fieldset>
-									<div class="row">
-										<div class="col-md-4">
-											<label for="buildingSelect">Building Type: </label>
-											<select id="buildingSelect" required class="form-control pointer" name="quote-form[buildingSelect]">
-												<option value="">--- Select ---</option>
-												<option value="Residential">Residential</option>
-												<option value="Commercial">Commercial</option>
-												<option value="Corporate">Corporate</option>
-												<option value="Hybrid">Hybrid</option>
-											</select>
-										</div>
+								<div class="row">
+									<div class="col-md-4 r-form r-form-com r-form-cor r-form-hyb">
+										<label for="cNumPark"># of parking spaces</label>
+										<input type="number" min="0" step="1" name="quote-form[cNumPark]" id="cNumPark">
 									</div>
-
-									<div class="row">
-										<div class="col-md-4 r-form r-form-res">
-											<label for="cNumApt"># of Apartments</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumApt]" id="cNumApt" class="used-in-calc">
-										</div>
-										<div class="col-md-4 r-form r-form-com r-form-hyb">
-											<label for="cNumBsns"># of Business</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumBsns]" id="cNumBsns">
-										</div>
-										<div class="col-md-4 r-form r-form-cor">
-											<label for="cNumCom"># of Companies</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumCom]" id="cNumCom">
-										</div>
-										<div class="col-md-4 r-form r-form-res r-form-com r-form-cor r-form-hyb">
-											<label for="cNumFlr"># of Floors</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumFlr]" id="cNumFlr" class="used-in-calc">
-										</div>
-										<div class="col-md-4 r-form r-form-res r-form-com r-form-cor r-form-hyb">
-											<label for="cNumBsmt"># of Basements</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumBsmt]" id="cNumBsmt" class="used-in-calc"> 
-										</div>
+									<div class="col-md-4 r-form r-form-com">
+										<label for="cNumElev"># of Elevator Cages</label>
+										<input type="number" min="0" step="1" name="quote-form[cNumElev]" id="cNumElev" class="used-in-calc">
 									</div>
+									<div class="col-md-4 r-form r-form-cor r-form-hyb">
+										<label for="cNumOcc"># of 🧑 per Floor</label>
+										<input type="number" min="0" step="1" name="quote-form[cNumOcc]" id="cNumOcc" class="used-in-calc">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-2 r-form r-form-hyb">
+										<label for="actHours">Active Hours/day</label>
+										<select id="actHours" class="form-control pointer" name="quote-form[actHours]">
+											<option value="">-Select-</option>
+										</select>
+									</div>
+								</div>
+
+								<!-- radio buttons -->
+								<div class="row">
+									<div class="col-md-12 r-form r-form-elev">
+										<label>Product: </label>
+										<label class="radio" for="quote-form:std">
+											<input class="radio-prod" type="radio" name="radio-btn" value="std" id="quote-form:std">
+											<i></i> Standard
+										</label>
+										<label class="radio" for="quote-form:prem">
+											<input class="radio-prod" type="radio" name="radio-btn" value="prem" id="quote-form:prem">
+											<i></i> Premium
+										</label>
+										<label class="radio" for="quote-form:exc">
+											<input class="radio-prod" type="radio" name="radio-btn" value="exc" id="quote-form:exc">
+											<i></i> Excelium
+										</label>
+									</div>
+								</div>
+
+								<div class="row">
+									<p id="error-msg"></p>
+								</div>
+							</fieldset>
+						</form>
+						<!-- /Quote Form -->
+					</div>
+					<!-- /FORM -->
+
+					<!-- RIGHT -->
+					<div class="col-lg-3 col-sm-4 mt-60">
+
+						<!-- Elevator calc + price -->														
+						<div class="toggle-transparent toggle-bordered-full clearfix">
+							<div class="active">
+								<div class="toggle-content">
 									
-									<div class="row">
-										<div class="col-md-4 r-form r-form-com r-form-cor r-form-hyb">
-											<label for="cNumPark"># of parking spaces</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumPark]" id="cNumPark">
-										</div>
-										<div class="col-md-4 r-form r-form-com">
-											<label for="cNumElev"># of Elevator Cages</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumElev]" id="cNumElev" class="used-in-calc">
-										</div>
-										<div class="col-md-4 r-form r-form-cor r-form-hyb">
-											<label for="cNumOcc"># of 🧑 per Floor</label>
-											<input type="number" min="0" step="1" name="quote-form[cNumOcc]" id="cNumOcc" class="used-in-calc">
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-2 r-form r-form-hyb">
-											<label for="actHours">Active Hours/day</label>
-											<select id="actHours" class="form-control pointer" name="quote-form[actHours]">
-												<option value="">-Select-</option>
-											</select>
-										</div>
-									</div>
-
-									<!-- radio buttons -->
-									<div class="row">
-										<div class="col-md-12 r-form r-form-elev">
-											<label>Product: </label>
-											<label class="radio" for="quote-form:std">
-												<input class="radio-prod" type="radio" name="radio-btn" value="std" id="quote-form:std">
-												<i></i> Standard
-											</label>
-											<label class="radio" for="quote-form:prem">
-												<input class="radio-prod" type="radio" name="radio-btn" value="prem" id="quote-form:prem">
-												<i></i> Premium
-											</label>
-											<label class="radio" for="quote-form:exc">
-												<input class="radio-prod" type="radio" name="radio-btn" value="exc" id="quote-form:exc">
-												<i></i> Excelium
-											</label>
-										</div>
-									</div>
-
-									<div class="row">
-										<p id="error-msg"></p>
-									</div>
-								</fieldset>
-							</form>
-							<!-- /Quote Form -->
-
-						</div>
-						<!-- /FORM -->
-
-						<!-- RIGHT -->
-						<div class="col-lg-3 col-sm-4 mt-60">
-
-							<!-- Elevator calc + price -->														
-							<div class="toggle-transparent toggle-bordered-full clearfix">
-								<div class="active">
-									<div class="toggle-content">
-										
-										<span class="clearfix">
-											<span class="float-right"></span>
-											<strong class="float-left"># of Elevators</strong>
-										</span>
-										<span class="clearfix">
-											<span id="calc-elev" class="float-right"></span>
-											<strong class="float-left">   Suggested:</strong>
-										</span>
-										<hr />
-										<span class="clearfix">
-											<span id="calc-elev-price" class="float-right"></span>
-											<strong class="float-left">Price/Elevator:</strong>
-										</span>
-										<hr />
-									</div>
-								</div>
-							</div>
-
-							<!-- Price Calc -->														
-							<div class="toggle-transparent toggle-bordered-full clearfix">
-								<div class="active">
-									<div class="toggle-content">
-										
-										<span class="clearfix">
-											<span id="calc-subtotal" class="float-right"></span>
-											<strong class="float-left">Subtotal:</strong>
-										</span>
-										<span class="clearfix">
-											<span id="calc-tax" class="float-right"></span>
-											<span class="float-left">Install fee:</span>
-										</span>
-										<hr />
-										<span class="clearfix">
-											<span id="calc-total" class="float-right fs-20"></span>
-											<strong class="float-left">TOTAL:</strong>
-										</span>
-										<hr />
-
-										<a href="#" class="btn btn-primary btn-lg btn-block fs-15"><i class="fa fa-mail-forward"></i>Checkout</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /RIGHT -->
-
-					</div>
-
-				</div>
-			</section>
-			<!-- /FORM -->
-
-
-			<!-- FOOTER -->
-			<footer id="footer">
-				<div class="container-fluid">
-
-
-					<div class="row">
-
-						<!-- col #1 -->
-						<div class="col-md-8">
-
-							<h3 class="letter-spacing-1">WHY US?</h3>
-
-							<!-- Small Description -->
-							<p>
-								Ask our customers and you will know why you will want our elevators. <br />
-								Alternatively, call us and we'll answer your questions.
-							</p>
-							<h2>(581) 701-0303</h2>
-						</div>
-						<!-- /col #1 -->
-
-						<!-- col #2 -->
-						<div class="col-md-4">
-							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
-
-							<!-- Newsletter Form -->
-							<p>Subscribe to Our (non-existant) Newsletter to get Important News & Offers (to come)</p>
-
-							<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-									<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
-									<span class="input-group-btn">
-										<button class="btn btn-success" type="submit">Subscribe</button>
+									<span class="clearfix">
+										<span class="float-right"></span>
+										<strong class="float-left"># of Elevators</strong>
 									</span>
+									<span class="clearfix">
+										<span id="calc-elev" class="float-right"></span>
+										<strong class="float-left">   Suggested:</strong>
+									</span>
+									<hr />
+									<span class="clearfix">
+										<span id="calc-elev-price" class="float-right"></span>
+										<strong class="float-left">Price/Elevator:</strong>
+									</span>
+									<hr />
 								</div>
-							</form>
-							<!-- /Newsletter Form -->
-
-
+							</div>
 						</div>
-						<!-- /col #2 -->
 
+						<!-- Price Calc -->														
+						<div class="toggle-transparent toggle-bordered-full clearfix">
+							<div class="active">
+								<div class="toggle-content">
+									
+									<span class="clearfix">
+										<span id="calc-subtotal" class="float-right"></span>
+										<strong class="float-left">Subtotal:</strong>
+									</span>
+									<span class="clearfix">
+										<span id="calc-tax" class="float-right"></span>
+										<span class="float-left">Install fee:</span>
+									</span>
+									<hr />
+									<span class="clearfix">
+										<span id="calc-total" class="float-right fs-20"></span>
+										<strong class="float-left">TOTAL:</strong>
+									</span>
+									<hr />
+									<a href="#" class="btn btn-primary btn-lg btn-block fs-15"><i class="fa fa-mail-forward"></i>Checkout</a>
+								</div>
+							</div>
+						</div>
 					</div>
-
-
+					<!-- /RIGHT -->
 				</div>
-
-				<div class="copyright">
-					<div class="container">
-						<ul class="float-right m-0 list-inline mobile-block">
-							<li>Terms &amp; Conditions</li>
-							<li>&bull;</li>
-							<li>Privacy</li>
-						</ul>
-						&copy; All Rights Reserved, Rocket Elevators LTD
-					</div>
-				</div>
-
-			</footer>
-			<!-- /FOOTER -->
-
-		</div>
-		<!-- /wrapper -->
-
-
-		<!-- SCROLL TO TOP -->
-		<a href="#" id="toTop"></a>
-
-
-		<!-- PRELOADER -->
-		<div id="preloader">
-			<div class="inner">
-				<span class="loader"></span>
 			</div>
-		</div><!-- /PRELOADER -->
-
-
-		<!-- JAVASCRIPT FILES -->
-        <%= javascript_include_tag "scripts" %>
-        <%= javascript_include_tag "calculator" %>
-
+		</section>
+		<!-- /FORM -->
+		<%= javascript_include_tag "calculator" %>
 	</body>
 </html>

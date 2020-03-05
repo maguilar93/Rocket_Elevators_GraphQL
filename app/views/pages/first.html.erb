@@ -2,18 +2,12 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8" />
-	<title>Rocket Elevators</title>
-	<meta name="description" content="" />
-	<meta name="Author" content="J.L." />
 
 	<!-- mobile settings -->
 	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
 	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
 	<!-- WEB FONTS : use %7C instead of | (pipe) -->
-    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" %>
-    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto&display=swap" %>
 
 	<!-- CORE CSS -->
     <%= stylesheet_link_tag "plugins/bootstrap/css/bootstrap.min" %>
@@ -22,19 +16,8 @@
     <%= stylesheet_link_tag "plugins/slider.revolution/css/extralayers" %>
     <%= stylesheet_link_tag "plugins/slider.revolution/css/settings" %>
 
-	<!-- THEME CSS -->
-    <%= stylesheet_link_tag "essentials" %>
-    <%= stylesheet_link_tag "layout" %>
-
-	<!-- PAGE LEVEL SCRIPTS -->
-    <%= stylesheet_link_tag "header-1" %>
-    <%= stylesheet_link_tag "blue" %>
 
 	<style>
-		html * {
-			font-family: 'Roboto', 'et-line', 'FontAwesome' !important;
-		}
-
 		.bgcolor {
 			background-color: steelblue;
 		}
@@ -79,127 +62,6 @@
 	-->
 
 <body id="top" class="smoothscroll enable-animation grain-blue">
-
-
-	<!-- wrapper -->
-	<div id="wrapper">
-
-		<!-- 
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-				
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
-		<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
-
-			<!-- TOP NAV -->
-			<header id="topNav">
-				<div class="container">
-
-					<!-- Mobile Menu Button -->
-					<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-						<i class="fa fa-bars"></i>
-					</button>
-
-					<!-- Logo -->
-					<a class="logo float-left" href="#top">
-						<img src="assets/R2.png" alt="Rocket Elevators Logo" />
-					</a>
-
-					<!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
-					<div class="navbar-collapse collapse float-right nav-main-collapse">
-						<nav class="nav-main">
-
-							<!-- 
-									.nav-onepage
-									Required for onepage navigation links
-									
-									Add .external for an external link!
-								-->
-							<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-								<li class="active">
-									<!-- HOME -->
-									<a href="first">
-										HOME
-									</a>
-								</li>
-								<li class="dropdown">
-									<!-- SERVICES -->
-									<a class="dropdown-toggle" href="#services">
-										SERVICES
-									</a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="third">RESIDENTIAL</a>
-										</li>
-										<li>
-											<a href="second">CORPORATE</a>
-										</li>
-										<li>
-											<a href="quoteform">GET QUOTE</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<!-- WORK -->
-									<a href="#work">
-										PORTFOLIO
-									</a>
-								</li>
-								<li>
-									<!-- NEWS -->
-									<a href="#news">
-										NEWS
-									</a>
-								</li>
-								<li>
-									<!-- CLIENTS -->
-									<a href="#customers">
-										CLIENTS
-									</a>
-								</li>
-								<li>
-									<!-- CONTACT -->
-									<a href="#contact">
-										CONTACT
-									</a>
-								</li>
-							</ul>
-
-						</nav>
-					</div>
-
-				</div>
-			</header>
-			<!-- /Top Nav -->
-
-		</div>
-
 
 		<!-- REVOLUTION SLIDER -->
 		<div class="slider fullwidthbanner-container roundedcorners">
@@ -1191,83 +1053,6 @@
 			</section>
 			<!-- /CONTACT -->
 
-		<!-- FOOTER -->
-		<footer id="footer">
-			<div class="container-fluid">
-
-
-				<div class="row">
-
-					<!-- col #1 -->
-					<div class="col-md-8">
-
-						<h3 class="letter-spacing-1">WHY US?</h3>
-
-						<!-- Small Description -->
-						<p>
-							Ask our customers and you will know why you will want our elevators. <br />
-							Alternatively, call us and we'll answer your questions.
-						</p>
-						<h2>(581) 701-0303</h2>
-					</div>
-					<!-- /col #1 -->
-
-					<!-- col #2 -->
-					<div class="col-md-4">
-						<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
-
-						<!-- Newsletter Form -->
-						<p>Subscribe to Our (non-existant) Newsletter to get Important News & Offers (to come)</p>
-
-						<form class="validate" action="" method="post" data-success="Subscribed! Thank you!"
-							data-toastr-position="bottom-right">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-								<input type="email" id="email" name="email" class="form-control required"
-									placeholder="Enter your Email">
-								<span class="input-group-btn">
-									<button id="submitbtn2" class="btn btn-success" type="submit">Subscribe</button>
-								</span>
-							</div>
-						</form>
-						<!-- /Newsletter Form -->
-
-
-					</div>
-					<!-- /col #2 -->
-
-				</div>
-
-
-			</div>
-
-			<div class="copyright">
-				<div class="container">
-					<ul class="float-right m-0 list-inline mobile-block">
-						<li>Terms &amp; Conditions</li>
-						<li>&bull;</li>
-						<li>Privacy</li>
-					</ul>
-					&copy; All Rights Reserved, Rocket Elevators LTD
-				</div>
-			</div>
-
-		</footer>
-		<!-- /FOOTER -->
-
-	</div>
-	<!-- /wrapper -->
-
-	<!-- SCROLL TO TOP -->
-	<a href="#" id="toTop"></a>
-
-	<!-- PRELOADER -->
-	<div id="preloader">
-		<div class="inner">
-			<span class="loader"></span>
-		</div>
-	</div><!-- /PRELOADER -->
-
 	<!-- JAVASCRIPT FILES -->
 	<script>var plugin_path = 'assets/plugins/';</script>
     <%= javascript_include_tag "plugins/jquery/jquery-3.3.1.min" %>
@@ -1276,21 +1061,10 @@
     <!-- PAGELEVEL SCRIPTS -->
     <%= javascript_include_tag "contact" %>
 
-
     <!-- REVOLUTION SLIDER -->
     <%= javascript_include_tag "plugins/slider.revolution/js/jquery.themepunch.tools.min" %>
     <%= javascript_include_tag "plugins/slider.revolution/js/jquery.themepunch.revolution.min" %>
     <%= javascript_include_tag "demo.revolution_slider" %>
-
-	<!-- <script>
-		document.getElementById("submitbtn1").addEventListener("click", function (event) {
-			event.preventDefault()
-		});
-		document.getElementById("submitbtn2").addEventListener("click", function (event) {
-			event.preventDefault()
-		});
-	</script> -->
-
 </body>
 
 </html>
