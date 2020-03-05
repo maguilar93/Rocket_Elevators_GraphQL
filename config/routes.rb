@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-  resources :pages
 
+  resources :pages
+  
   root 'pages#first'
 
+  get 'first' => 'pages#first' # index
+  get 'second' => 'pages#second' # corporate
+  get 'third' => 'pages#third' # residential
+  get 'quoteform' => 'pages#quoteform' # quote form
 
-  get 'pages/first'
-  get 'pages/second'
-  get 'pages/third'
-  get 'pages/quoteform'
-  get 'pages/mainpage_form'
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

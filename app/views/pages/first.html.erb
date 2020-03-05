@@ -144,7 +144,7 @@
 							<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 								<li class="active">
 									<!-- HOME -->
-									<a href="#top">
+									<a href="first">
 										HOME
 									</a>
 								</li>
@@ -155,13 +155,13 @@
 									</a>
 									<ul class="dropdown-menu">
 										<li>
-											<a href="landing-res.html">RESIDENTIAL</a>
+											<a href="third">RESIDENTIAL</a>
 										</li>
 										<li>
-											<a href="landing-cor.html">CORPORATE</a>
+											<a href="second">CORPORATE</a>
 										</li>
 										<li>
-											<a href="quote-form.html">GET QUOTE</a>
+											<a href="quoteform">GET QUOTE</a>
 										</li>
 									</ul>
 								</li>
@@ -242,7 +242,7 @@
 							data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none"
 							data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="500"
 							style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-							<a class="btn btn-info btn-lg" href="quote-form.html">REQUEST A QUOTE &nbsp; <i
+							<a class="btn btn-info btn-lg" href="quoteform">REQUEST A QUOTE &nbsp; <i
 									class="fa fa-angle-right"></i></a>
 						</div>
 					</li>
@@ -277,7 +277,7 @@
 							data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none"
 							data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
 							style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-							<a class="btn btn-info btn-lg" href="landing-res.html">MORE DETAILS &nbsp; <i
+							<a class="btn btn-info btn-lg" href="third">MORE DETAILS &nbsp; <i
 									class="fa fa-angle-right"></i></a>
 						</div>
 					</li>
@@ -312,7 +312,7 @@
 							data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none"
 							data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
 							style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-							<a class="btn btn-info btn-lg" href="landing-cor.html">MORE DETAILS &nbsp; <i
+							<a class="btn btn-info btn-lg" href="second">MORE DETAILS &nbsp; <i
 									class="fa fa-angle-right"></i></a>
 						</div>
 					</li>
@@ -370,7 +370,7 @@
 						<img class="img-fluid" src="assets/AdobeStock_33298664.jpeg" alt="image of 2 elevators" />
 						<h3 class="mt-10">Residential</h3>
 						<p>We offers a service for residential buildings.</p>
-						<a href="landing-res.html" class="btn btn-default">MORE DETAILS</a>
+						<a href="third" class="btn btn-default">MORE DETAILS</a>
 					</div>
 
 					<div class="col-sm-4">
@@ -378,7 +378,7 @@
 							alt="image of man pressing elevator button" />
 						<h3 class="mt-10">Corporate</h3>
 						<p>We offers a service for corporate buildings.</p>
-						<a href="landing-cor.html" class="btn btn-default">MORE DETAILS</a>
+						<a href="second" class="btn btn-default">MORE DETAILS</a>
 					</div>
 
 				</div>
@@ -401,7 +401,7 @@
 					<a class="btn btn-default btn-lg" href="#services">OUR SERVICES <i
 							class="fa fa-angle-right"></i></a>
 					&nbsp; OR &nbsp;
-					<a class="btn btn-default btn-lg" href="quote-form.html">REQUEST A QUOTE <i
+					<a class="btn btn-default btn-lg" href="quoteform">REQUEST A QUOTE <i
 							class="fa fa-angle-right"></i></a>
 				</div>
 
@@ -420,8 +420,8 @@
 				<div class="text-center">
 					<ul class="nav nav-pills mix-filter mb-60">
 						<li data-filter="all" class="filter active"><a href="#">All</a></li>
-						<li data-filter="residential" class="filter"><a href="#">Residential</a></li>
-						<li data-filter="corporate" class="filter"><a href="#">Corporate</a></li>
+						<li data-filter="residential" class="filter"><a href="third">Residential</a></li>
+						<li data-filter="corporate" class="filter"><a href="second">Corporate</a></li>
 						<li data-filter="project" class="filter"><a href="#">Project</a></li>
 						<li data-filter="awards" class="filter"><a href="#">Awards</a></li>
 					</ul>
@@ -559,7 +559,7 @@
 							<div class="item-box-desc">
 								<h3>Commercial Elevator</h3>
 								<ul class="list-inline categories m-0">
-									<li><a href="#">Corporate</a></li>
+									<li><a href="second">Corporate</a></li>
 								</ul>
 							</div>
 						</div>
@@ -1190,212 +1190,6 @@
 				</div>
 			</section>
 			<!-- /CONTACT -->
-
-			<!-- FOOTER -->
-			<footer id="footer">
-				<div class="container-fluid">
-
-		<!-- CONTACT -->
-		<section id="contact">
-			<div class="container-fluid">
-
-				<header class="text-center mb-60">
-					<h2>Contact Us</h2>
-					<hr />
-				</header>
-
-				<div class="row">
-					<!-- FORM -->
-					<div class="col-md-8 col-sm-8">
-
-						<h3>Send us your project ideas!!</h3>
-						<!--
-								MESSAGES
-								
-									How it works?
-									The form data is posted to php/contact.php where the fields are verified!
-									php.contact.php will redirect back here and will add a hash to the end of the URL:
-										#alert_success 		= email sent
-										#alert_failed		= email not sent - internal server error (404 error or SMTP problem)
-										#alert_mandatory	= email not sent - required fields empty
-										Hashes are handled by assets/js/contact.js
-
-									Form data: required to be an array. Example:
-										contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
-										Also, add `required` to input fields if is a mandatory field. 
-										Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
-
-									PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
-												 ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
-
-									WARNING! Do not change the `email` and `name`!
-												contact[name][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-												contact[email][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-							-->
-
-						<!-- Alert Success -->
-						<div id="alert_success" class="alert alert-success mb-30">
-							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-							<strong>Thank You!</strong> Your message successfully sent!
-						</div><!-- /Alert Success -->
-
-
-						<!-- Alert Failed -->
-						<div id="alert_failed" class="alert alert-danger mb-30">
-							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-							<strong>[SMTP] Error!</strong> Internal server error!
-						</div><!-- /Alert Failed -->
-
-
-						<!-- Alert Mandatory -->
-						<div id="alert_mandatory" class="alert alert-danger mb-30">
-							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-							<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
-						</div><!-- /Alert Mandatory -->
-
-
-						<form action="#" method="post" enctype="multipart/form-data">
-							<fieldset>
-								<input type="hidden" name="action" value="contact_send" />
-
-								<div class="row">
-									<div class="col-md-4">
-										<label for="contact:name">Full Name *</label>
-										<input required type="text" value="" class="form-control"
-											name="contact[name][required]" id="contact:name">
-									</div>
-									<div class="col-md-4">
-										<label for="contact:email">E-mail Address *</label>
-										<input required type="email" value="" class="form-control"
-											name="contact[email][required]" id="contact:email">
-									</div>
-									<div class="col-md-4">
-										<label for="contact:phone">Phone</label>
-										<input type="text" value="" class="form-control" name="contact[phone]"
-											id="contact:phone">
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-md-4">
-										<label for="contact:b-name">Business Name</label>
-										<input type="text" value="" class="form-control" name="contact[b-name]"
-											id="contact:b-name">
-									</div>
-									<div class="col-md-4">
-										<label for="contact:p-name">Project Name</label>
-										<input type="text" value="" class="form-control" name="contact[p-name]"
-											id="contact:p-name">
-									</div>
-									<div class="col-md-4">
-										<label for="contact:department">Department *</label>
-										<select required class="form-control pointer" name="contact[department]"
-											id="contact:department">
-											<option value="">--- Select ---</option>
-											<option value="Question">Question</option>
-											<option value="Residential">Residential</option>
-											<option value="Corporate">Corporate</option>
-										</select>
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-md-12">
-										<label for="contact:description">Project Description</label>
-										<input type="text" value="" class="form-control" name="contact[description]"
-											id="contact:description">
-									</div>
-
-								</div>
-
-								<div class="row">
-									<div class="col-md-8">
-										<label for="contact:subject">Subject *</label>
-										<input required type="text" value="" class="form-control"
-											name="contact[subject][required]" id="contact:subject">
-									</div>
-
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<label for="contact:message">Message *</label>
-										<textarea required maxlength="10000" rows="8" class="form-control"
-											name="contact[message]" id="contact:message"></textarea>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<label for="contact:attachment">File Attachment</label>
-
-										<!-- custom file upload -->
-										<input class="custom-file-upload" type="file" id="file"
-											name="contact[attachment]" id="contact:attachment"
-											data-btn-text="Select a File" />
-										<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
-
-									</div>
-								</div>
-
-							</fieldset>
-
-							<div class="row">
-								<div class="col-md-12">
-									<button id="submitbtn1" type="submit" class="btn btn-primary"><i
-											class="fa fa-check"></i> SEND MESSAGE</button>
-								</div>
-							</div>
-						</form>
-
-					</div>
-					<!-- /FORM -->
-
-
-					<!-- INFO -->
-					<div class="col-md-4 col-sm-4">
-
-						<h2>Visit Us</h2>
-
-						<!-- 
-							Available heights
-								h-100
-								h-150
-								h-200
-								h-250
-								h-300
-								h-350
-								h-400
-								h-450
-								h-500
-								h-550
-								h-600
-							-->
-						<div class="h-400 grayscale">
-							<iframe
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.5157012130044!2d-73.56930918421638!3d45.45941454178339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91067ae856153%3A0x5ba73b190d3e61d2!2s4468%20Wellington%20St%2C%20Verdun%2C%20QC%20H4G%202G4!5e0!3m2!1sen!2sca!4v1580323444758!5m2!1sen!2sca"
-								width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="">
-							</iframe>
-						</div>
-
-						<hr />
-
-						<p>
-							<span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> 4468
-								Wellington Street, Montreal, Canada</span>
-							<span class="block"><strong><i class="fa fa-phone"></i> Phone:</strong> <a
-									href="tel:1581-701-0303">581-701-0303</a></span>
-							<span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a
-									href="mailto:info@codeboxx.biz">info@codeboxx.biz</a></span>
-						</p>
-
-					</div>
-					<!-- /INFO -->
-
-				</div>
-
-			</div>
-		</section>
-		<!-- /CONTACT -->
-
 
 		<!-- FOOTER -->
 		<footer id="footer">
