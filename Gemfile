@@ -35,6 +35,9 @@ gem 'rails-assets-datatables', source:'http://rails-assets.org'
 gem "font-awesome-rails"
 gem 'font-awesome-sass', '~> 5.12.0'
 
+gem 'devise'
+gem 'activeadmin'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

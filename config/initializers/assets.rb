@@ -35,12 +35,6 @@ Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/j
 #reda add that
 Rails.application.config.assets.precompile += %w( demo.revolution_slider.js )
 
-Rails.application.config.assets.precompile += %w( plugins/smoothscroll.js )
-Rails.application.config.assets.precompile += %w( demo.portfolio_ajax.js )
-
-Rails.application.config.assets.precompile += %w( plugins/jquery.nav.js)
-
-Rails.application.config.assets.precompile += %w( demo.portfolio_ajax.js )
 
 Rails.application.config.assets.precompile += %w( plugins/jquery.nav.min.js )
 Rails.application.config.assets.precompile += %w( plugins/jquery/jquery-3.3.1.min.js )

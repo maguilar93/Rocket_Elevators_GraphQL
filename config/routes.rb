@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
-  resources :quote
-  root 'quote#new'
-  get 'quote/new'
+  
+  devise_for :employees, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :pages
-  root 'pages#first'
+  resources :quote
+  
+  root 'pages#index'
 
-
-  get 'first' => 'pages#first' # index
-  get 'second' => 'pages#second' # corporate
-  get 'third' => 'pages#third' # residential
-  get 'quoteform' => 'pages#quoteform' # quote form
-
-
+  get 'index' => 'pages#index' # index
+  get 'corporate' => 'pages#corporate' # corporate
+  get 'residential' => 'pages#residential' # residential
+  get 'quoteform' => 'quote#new' # quote form
+  get 'login' => 'pages#login'
+  get 'quote/new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

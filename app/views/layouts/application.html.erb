@@ -47,7 +47,7 @@
           </button>
 
           <!-- Logo -->
-          <a class="logo float-left" href="index.html">
+          <a class="logo float-left" href="index#">
             <%= image_tag("R2", :alt => "Rocket Elevators Logo") %>
           </a>
 
@@ -55,43 +55,43 @@
             <nav class="nav-main">
               <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
                 <li class="active"><!-- HOME -->
-                  <a href="index.html">
+                  <a href="index#">
                     HOME
                   </a>
                 </li>
                 <li class="dropdown"><!-- SERVICES -->
-                  <a class="dropdown-toggle" href="index.html#services">
+                  <a class="dropdown-toggle" href="index#services">
                     SERVICES
                   </a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="landing-res.html">RESIDENTIAL</a>
+                      <a href="residential">RESIDENTIAL</a>
                     </li>
                     <li>
-                      <a href="landing-cor.html">CORPORATE</a>
+                      <a href="corporate">CORPORATE</a>
                     </li>
                     <li>
-                      <a href="#">GET QUOTE</a>
+                      <a href="quoteform">GET QUOTE</a>
                     </li>
                   </ul>
                 </li>
                 <li><!-- WORK -->
-                  <a href="index.html#work">
+                  <a href="index#work">
                     PORTFOLIO
                   </a>
                 </li>
                 <li><!-- NEWS -->
-                  <a href="index.html#news">
+                  <a href="index#news">
                     NEWS
                   </a>
                 </li>
                 <li><!-- CLIENTS -->
-                  <a href="index.html#customers">
+                  <a href="index#customers">
                     CLIENTS
                   </a>
                 </li>
                 <li><!-- CONTACT -->
-                  <a href="index.html#contact">
+                  <a href="index#contact">
                     CONTACT
                   </a>
                 </li>
@@ -105,6 +105,12 @@
 
     <div id="wrapper">
       <script> var plugin_path = 'assets/javascripts/plugins/'; </script>
+
+      <!--
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      -->
+
       <%= yield %>
 
     	<!-- FOOTER -->
