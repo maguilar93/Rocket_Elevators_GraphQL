@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-
-  root 'pages#quoteform'
+  resources :quote
+  root 'quote#new'
+  get 'quote/new'
   resources :pages
-  
   root 'pages#first'
 
 

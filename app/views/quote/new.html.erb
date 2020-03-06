@@ -1,0 +1,14 @@
+<%= form_for @quote, url:{action:"create"} do |f| %>
+
+</p>
+        <%= render partial: "quote/form", :locals =>{:f => f}  %>
+        <p>
+        <%= f.submit("Create")  %>
+        </p>
+
+
+    
+   
+
+
+<% end %>

@@ -12,24 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_03_04_213033) do
 
-  create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
-    t.integer "years"
-  end
+  
 
-  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "full_name"
-    t.string "phone"
-    t.string "email"
-    t.string "SIN"
-    t.string "insurer"
-    t.string "insurance_type"
-    t.integer "vacancy_days_left"
-    t.string "YTD_hour"
-    t.string "YTD"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "Full_Name"
@@ -50,14 +35,6 @@ ActiveRecord::Schema.define(version: 2020_03_04_213033) do
    
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "remember_token"
-    t.datetime "remember_token_expires_at"
-    t.string "title"
-  end
+ 
 
 end

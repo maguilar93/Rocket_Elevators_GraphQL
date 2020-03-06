@@ -1,31 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	</head>
+   
 
-	<body class="smoothscroll enable-animation grain-blue">
-		<!-- FORM -->
-		<section id="requestform">
-			<div class="container">
-				<header class="text-center mb-60">
-					<h2>Request a Quote</h2>
-					<hr />
-				</header>
 
-				<div class="row">
-					<!-- FORM -->
-					<div class="col-md-8 col-sm-8">
-						<h3>Request Form: </h3>
-						<!-- Quote Form -->
-						<form id="quote-form" action="" method="post" enctype="text/plain">
-							<fieldset>
+   <!-- FORM -->
+		            <div>
+                            <div >
+						            <div >
+										<label for="quote_Full_Name" >Full Name : </label>
+										<input class="used-in-calc" id="quote_Full_Name" type = "text"  name="quote[Full_Name]"  >
+									</div>
+									<div >
+										<label for="quote_Phone_Number">Phone Number : </label>
+										<input  class="used-in-calc" name="quote[Phone_Number]" id="quote_Phone_Number" type="text">
+									</div>
+									<div >
+										<label for="quote_Company_Name">Company Name :</label>
+										<input  class="used-in-calc" name="quote[Company_Name]" id="quote_Company_Name" type="text">
+									</div>
+									<div >
+										<label for="quote_Email">Email :</label>
+										<input  class="used-in-calc" name="quote[Email]" id="quote_Email" type="text">
+									</div>
+						   </div>
+						   
 								<div class="row">
 									<div class="col-md-4">
-										<label for="buildingSelect">Building Type: </label>
-										<select id="buildingSelect" required class="form-control pointer" name="quote-form[buildingSelect]">
+										<label for="quote_Building_Type" >Building Type : </label>
+										<select id="buildingSelect" required class="form-control pointer"  name="quote[Building_Type]" >
 											<option value="">--- Select ---</option>
-											<option value="0">Residential</option>
-											<option value="">Commercial</option>
+											<option value="Residential">Residential</option>
+											<option value="Commercial">Commercial</option>
 											<option value="Corporate">Corporate</option>
 											<option value="Hybrid">Hybrid</option>
 										</select>
@@ -34,39 +37,40 @@
 
 								<div class="row">
 									<div class="col-md-4 r-form r-form-res">
-										<label for="cNumApt"># of Apartments</label>
-										<input type="number" min="0" step="1" name="quote-form[cNumApt]" id="cNumApt" class="used-in-calc">
+										<label for="quote_Nb_Appartementme" >Nb Appartementme : </label>
+										<input class="used-in-calc" name="quote[Email]" id="quote_Email" type="text" >
 									</div>
 									<div class="col-md-4 r-form r-form-com r-form-hyb">
-										<label for="cNumBsns"># of Business</label>
-										<input type="number" min="0" step="1" name="quote-form[cNumBsns]" id="cNumBsns">
+										<label for="quote_Nb_Business">Nb Business</label>
+										<input name="quote[Nb_Business]" id="quote_Nb_Business" type="text">
 									</div>
 									<div class="col-md-4 r-form r-form-cor">
-										<label for="cNumCom"># of Companies</label>
-										<input type="number" min="0" step="1" name="quote-form[cNumCom]" id="cNumCom">
+										<label for="quote_Full_Name"># of Companies</label>
+										<input name="" id="" type="text">
 									</div>
 									<div class="col-md-4 r-form r-form-res r-form-com r-form-cor r-form-hyb">
-										<label for="cNumFlr"># of Floors</label>
-										<input type="number" min="0" step="1" name="quote-form[cNumFlr]" id="cNumFlr" class="used-in-calc">
+										<label for="quote_Nb_Floor"> Nb Floor : </label>
+										<input class="used-in-calc" name="quote[Nb_Floor]" id="quote_Nb_Floor" type="text">
 									</div>
 									<div class="col-md-4 r-form r-form-res r-form-com r-form-cor r-form-hyb">
-										<label for="cNumBsmt"># of Basements</label>
-										<input type="number" min="0" step="1" name="quote-form[cNumBsmt]" id="cNumBsmt" class="used-in-calc"> 
+										<label for="quote_Nb_Basement"> Nb Basement : </label>
+										<input  class="used-in-calc" name="quote[Nb_Basement]" id="quote_Nb_Basementl" type="text"> 
 									</div>
 								</div>
-								
-								<div class="row">
+
+
+									<div class="row">
 									<div class="col-md-4 r-form r-form-com r-form-cor r-form-hyb">
-										<label for="cNumPark"># of parking spaces</label>
-										<input type="number" min="0" step="1" name="quote-form[cNumPark]" id="cNumPark">
+										<label for="quote_Nb_Parking">Nb Parking  : </label>
+										<input class="used-in-calc" name="quote[Nb_Parking]" id="quote_Nb_Parking" type="text">
 									</div>
 									<div class="col-md-4 r-form r-form-com">
-										<label for="cNumElev"># of Elevator Cages</label>
-										<input type="number" min="0" step="1" name="quote-form[cNumElev]" id="cNumElev" class="used-in-calc">
+										<label for="quote_Nb_Cage">Nb Cage  : </label>
+										<input class="used-in-calc" name="quote[Nb_Cage]" id="quote_Nb_Cage" type="text">
 									</div>
 									<div class="col-md-4 r-form r-form-cor r-form-hyb">
-										<label for="cNumOcc"># of 🧑 per Floor</label>
-										<input type="number" min="0" step="1" name="quote-form[cNumOcc]" id="cNumOcc" class="used-in-calc">
+										<label for="quote_Nb_OccupantPerFloor">Nb_OccupantPerFloor : </label>
+										<input class="used-in-calc" name="quote[Nb_OccupantPerFloor]" id="quote_Nb_OccupantPerFloor" type="text">
 									</div>
 								</div>
 								<div class="row">
@@ -100,17 +104,8 @@
 								<div class="row">
 									<p id="error-msg"></p>
 								</div>
-							</fieldset>
-						</form>
-						<!-- /Quote Form -->
-					</div>
-					<!-- /FORM -->
 
-					<!-- RIGHT -->
-					<div class="col-lg-3 col-sm-4 mt-60">
-
-						<!-- Elevator calc + price -->														
-						<div class="toggle-transparent toggle-bordered-full clearfix">
+									<div class="toggle-transparent toggle-bordered-full clearfix">
 							<div class="active">
 								<div class="toggle-content">
 									
@@ -155,12 +150,9 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<!-- /RIGHT -->
-				</div>
-			</div>
-		</section>
-		<!-- /FORM -->
-		<%= javascript_include_tag "calculator" %>
-	</body>
-</html>
+								
+					</div>		
+									
+
+								
+				<%= javascript_include_tag "calculator" %>
