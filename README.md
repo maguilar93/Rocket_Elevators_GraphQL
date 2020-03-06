@@ -200,7 +200,7 @@ The website have a backoffice that employee can login to acces the data from quo
 
 ## Specials Acknowledgments
 
-- Afendy -afendyng
+- Afandy -afandyng
 
 - Jorge -jorgechavarriaga
 
