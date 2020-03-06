@@ -10,29 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_04_213033) do
-
-
-  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "Full_Name"
-    t.integer "Phone_Number"
-    t.string "Company_Name"
-    t.string "Email"
-    t.string "Building_Type"
-    t.string "Product_Grade"
-    t.integer "Nb_Appartement"
-    t.integer "Nb_Business"
-    t.integer "Nb_Floor"
-    t.integer "Nb_Basement"
-    t.integer "Nb_Cage"
-    t.integer "Nb_Parking"
-    t.integer "Nb_OccupantPerFloor"
-    t.integer "Nb_OpperatingHour"
-    t.string "Final_Price"
-   
-  end
-
- 
 ActiveRecord::Schema.define(version: 2020_03_06_022842) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -50,7 +27,9 @@ ActiveRecord::Schema.define(version: 2020_03_06_022842) do
   end
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "fullname", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "title"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -59,8 +38,27 @@ ActiveRecord::Schema.define(version: 2020_03_06_022842) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_employees_on_email", unique: true
-    t.index ["fullname"], name: "index_employees_on_fullname", unique: true
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
+  end
+
+  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "Full_Name"
+    t.integer "Phone_Number"
+    t.string "Company_Name"
+    t.string "Email"
+    t.string "Building_Type"
+    t.string "Product_Grade"
+    t.integer "Nb_Appartement"
+    t.integer "Nb_Business"
+    t.integer "Nb_Floor"
+    t.integer "Nb_Basement"
+    t.integer "Nb_Cage"
+    t.integer "Nb_Parking"
+    t.integer "Nb_OccupantPerFloor"
+    t.integer "Nb_OpperatingHour"
+    t.string "Final_Price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
