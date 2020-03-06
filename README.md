@@ -180,10 +180,6 @@ The website have a backoffice that employee can login to acces the data from quo
     - zeitwerk (2.3.0)
     - zlib (default: 1.0.0)
 
-## Initial User List Database
-|First Name|Last Name|Title|Email|Password|ROCKET ELEVATORS INFORMATION SYSTEM
-
-
 ## Link to the video
 
 
