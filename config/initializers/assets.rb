@@ -31,6 +31,8 @@ Rails.application.config.assets.precompile += %w( scripts.js )
 Rails.application.config.assets.precompile += %w( calculator.js )
 Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/jquery.themepunch.tools.min.js )
 Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/jquery.themepunch.revolution.min.js )
+
+#reda add that
 Rails.application.config.assets.precompile += %w( demo.revolution_slider.js )
 
 
