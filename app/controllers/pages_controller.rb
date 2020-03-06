@@ -1,14 +1,14 @@
 class PagesController < ApplicationController
-  def first
+  def index
   end
 
-  def mainpage_form
+  def residential
   end
 
-  def second
+  def corporate
   end
 
-  def third
+  def login
   end
 
   def quoteform
