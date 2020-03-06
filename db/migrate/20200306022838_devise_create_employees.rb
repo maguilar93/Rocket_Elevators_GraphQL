@@ -3,6 +3,7 @@
 class DeviseCreateEmployees < ActiveRecord::Migration[5.2]
   def change
     create_table :employees do |t|
+      t.string :fullname,           null: false, default: ""
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -36,6 +37,7 @@ class DeviseCreateEmployees < ActiveRecord::Migration[5.2]
       t.timestamps null: false
     end
 
+    add_index :employees, :fullname,             unique: true
     add_index :employees, :email,                unique: true
     add_index :employees, :reset_password_token, unique: true
     # add_index :employees, :confirmation_token,   unique: true

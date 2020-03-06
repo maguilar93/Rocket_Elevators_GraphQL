@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_03_06_022842) do
   end
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "fullname", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_03_06_022842) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_employees_on_email", unique: true
+    t.index ["fullname"], name: "index_employees_on_fullname", unique: true
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
   end
 
