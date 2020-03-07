@@ -297,6 +297,7 @@ ActiveAdmin.setup do |config|
   # config.filter_columns_for_large_association, [
   #    :display_name,
   #    :full_name,
+  #    :first_name,
   #    :name,
   #    :username,
   #    :login,
