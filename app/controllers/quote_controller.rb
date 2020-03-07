@@ -11,7 +11,7 @@ class QuoteController < ApplicationController
       #render json: @quote #test when submit button form
       if @quote.save
         flash[:notice] = "add new quete successfull "
-        redirect_to action:"index"
+        redirect_to controller: 'pages', action: "index"
       else
         flash[:notice] = "add new quete not successfull "
         redirect_to action:"new"
@@ -25,7 +25,6 @@ class QuoteController < ApplicationController
     private
     def quote_params
       #params.require(name model)
-      params.require(:quote).permit(:Full_Name,:Phone_Number,:Company_Name,:Email,:Building_Type,:Nb_Appartement,:Nb_Business,:Nb_Floor,:Nb_Basement,:Nb_Parking,:Nb_Cage,:Nb_OccupantPerFloor,:Product_Grade)
+      params.require(:quote).permit(:Full_Name,:Phone_Number,:Company_Name,:Email,:Building_Type,:Nb_Appartement,:Nb_Company,:Nb_Business,:Nb_Floor,:Nb_Basement,:Nb_Parking,:Nb_Cage,:Nb_OccupantPerFloor,:Product_Grade,:Nb_Ele_Suggested,:Price_Per_Ele,:Subtotal,:Install_Fee,:Final_Price)
     end
-    
   end

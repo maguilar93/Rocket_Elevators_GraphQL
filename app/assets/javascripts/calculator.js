@@ -39,17 +39,17 @@ buildingSelect.onchange = function(){
 
 //production line button check, returns value of radio button
 var RadioCheck = function(){
-    if (document.querySelector('input[name="radio-btn"]:checked') === null) {
+    if (document.querySelector('input[name="quote[Product_Grade]"]:checked') === null) {
         return "";
     }
-    if (document.querySelector('input[name="radio-btn"]:checked').value === "std"){
-        $("#calc-elev-price").text("$ 7565");
+    if (document.querySelector('input[name="quote[Product_Grade]"]:checked').value === "std"){
+        $("#calc-elev-price").val("$ 7565");
         return "std";
-    } else if (document.querySelector('input[name="radio-btn"]:checked').value === "prem"){
-        $("#calc-elev-price").text("$12,345");
+    } else if (document.querySelector('input[name="quote[Product_Grade]"]:checked').value === "prem"){
+        $("#calc-elev-price").val("$12,345");
         return "prem";
-    } else if (document.querySelector('input[name="radio-btn"]:checked').value === "exc"){
-        $("#calc-elev-price").text("$15,400");
+    } else if (document.querySelector('input[name="quote[Product_Grade]"]:checked').value === "exc"){
+        $("#calc-elev-price").val("$15,400");
         return "exc";
     }
 };
@@ -64,11 +64,11 @@ var ResetForm = function(){
             $(this).css({"border-color":"rgb(238,238,238)"});
         }
     });
-    $("#calc-tax").text("$ --");
-    $("#calc-subtotal").text("$ --");
-    $("#calc-total").text("$ --");
-    $("#calc-elev").text("--");
-    $("#calc-elev-price").text("$ --");
+    $("#calc-tax").val("$ --");
+    $("#calc-subtotal").val("$ --");
+    $("#calc-total").val("$ --");
+    $("#calc-elev").val("--");
+    $("#calc-elev-price").val("$ --");
 };
 
 //validates inputs to be >=0
@@ -93,34 +93,34 @@ $("input[class='used-in-calc']").on("input",function(){
 });
 
 function ShowElevs(x) {
-    $("#calc-elev").text(x);
+    $("#calc-elev").val(x);
 };
 
 function ShowElevPrice(pline) {
     if (pline === "std"){
-        $("#calc-elev-price").text("$ 7565");
+        $("#calc-elev-price").val("$ 7565");
     } else if (pline === "prem"){
-        $("#calc-elev-price").text("$12,345");
+        $("#calc-elev-price").val("$12,345");
     } else if (pline === "exc"){
-        $("#calc-elev-price").text("$15,400");
+        $("#calc-elev-price").val("$15,400");
     }
 };
 
 function ShowTotals(s,f,t) {
-    $("#calc-tax").text("$ " + s.toFixed(2));
-    $("#calc-subtotal").text("$ " + f.toFixed(2));
-    $("#calc-total").text("$ " + t.toFixed(2));
+    $("#calc-tax").val("$ " + s.toFixed(2));
+    $("#calc-subtotal").val("$ " + f.toFixed(2));
+    $("#calc-total").val("$ " + t.toFixed(2));
 };
 
 //turns data to send into json
 function asJSON(test){
     let data = {
         type: test,
-        nApts: $("#cNumApt").val() || 0,
-        nFlrs: $("#cNumFlr").val() || 0,
-        nBsmts: $("#cNumBsmt").val() || 0,
-        nOccs: $("#cNumOcc").val() || 0,
-        nElevs:$("#cNumElev").val() || 0,
+        nApts: $("#quote_Nb_Appartement").val() || 0,
+        nFlrs: $("#quote_Nb_Floor").val() || 0,
+        nBsmts: $("#quote_Nb_Basement").val() || 0,
+        nOccs: $("#quote_Nb_OccupantPerFloor").val() || 0,
+        nElevs:$("#quote_Nb_Cage").val() || 0,
         pLine: RadioCheck()
     };
     return JSON.stringify(data);
@@ -155,20 +155,20 @@ function PostCalc(data){
 $("input").on("input",function() {
     if (buildingSelect.value !== "") {
         if (buildingSelect.value === "Residential") {
-            if ($("#cNumApt").val() > 0 && $("#cNumFlr").val() > 0){
+            if ($("#quote_Nb_Appartement").val() > 0 && $("#quote_Nb_Floor").val() > 0){
                 PostCalc(asJSON(1));
             }
         } else if (buildingSelect.value === "Commercial") {
-            if ($("#cNumElev").val() > 0) {
+            if ($("#quote_Nb_Cage").val() > 0) {
                 PostCalc(asJSON(2));
             }
         } else if (buildingSelect.value === "Corporate" || buildingSelect.value === "Hybrid") {
-            if($("#cNumOcc").val() > 0 && $("#cNumFlr").val() > 0 && $("#cNumBsmt").val() >= 0) {
+            if($("#quote_Nb_OccupantPerFloor").val() > 0 && $("#quote_Nb_Floor").val() > 0 && $("#quote_Nb_Basement").val() >= 0) {
                 PostCalc(asJSON(3));
             }
         }
-        if (document.querySelector('input[name="radio-btn"]:checked') !== null) {
-            ShowElevPrice(document.querySelector('input[name="radio-btn"]:checked').value);
+        if (document.querySelector('input[name="quote[Product_Grade]"]:checked') !== null) {
+            ShowElevPrice(document.querySelector('input[name="quote[Product_Grade]"]:checked').value);
         }
     }   
 });
