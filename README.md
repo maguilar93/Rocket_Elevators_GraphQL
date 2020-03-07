@@ -8,11 +8,11 @@ The website have a backoffice that employee can login to acces the data from quo
   - Ruby version : 2.6.5  
   - Rails version : 5.2.4.1
   - Gem version : 3.1.2
-  - MySQL version : 8.0.19
+  - Bundler version : 1.17.3
 
 ## Link to the video
     https://youtu.be/3A9tzJVdl8s
-    - by maria
+   - by maria
 
 ## Collaborators
   - Maria - Collaborator -maguilar93
