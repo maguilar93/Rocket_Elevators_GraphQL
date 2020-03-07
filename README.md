@@ -4,6 +4,10 @@ Ruby On Rails project for RocketElevators.
 Make the interactive website with the original static website of "Jackie" and link it to a database to store "User" and "Employee" login data and the quote data in separate tables.  
 The website have a backoffice that employee can login to acces the data from quote.  
 
+## Back Office Admin Logins
+  - admin@example.com , password
+  - test@test , 123123
+
 ## Configuration
   - Ruby version : 2.6.5  
   - Rails version : 5.2.4.1
@@ -11,8 +15,8 @@ The website have a backoffice that employee can login to acces the data from quo
   - Bundler version : 1.17.3
 
 ## Link to the video
-    https://youtu.be/3A9tzJVdl8s
-   - by maria
+   https://youtu.be/3A9tzJVdl8s
+      -by maria
 
 ## Collaborators
   - Maria - Collaborator -maguilar93
