@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :customers
+  devise_for :users
   devise_for :employees, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :pages
