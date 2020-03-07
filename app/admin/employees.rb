@@ -4,7 +4,9 @@ ActiveAdmin.register Employee do
   index do
     selectable_column
     id_column
-    column :fullname
+    column :first_name
+    column :last_name
+    column :title
     column :email
     column :current_sign_in_at
     column :sign_in_count
@@ -19,6 +21,9 @@ ActiveAdmin.register Employee do
 
   form do |f|
     f.inputs do
+      f.input :first_name
+      f.input :last_name
+      f.input :title
       f.input :email
       f.input :password
       f.input :password_confirmation
