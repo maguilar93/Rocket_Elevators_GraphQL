@@ -50,12 +50,17 @@ ActiveRecord::Schema.define(version: 2020_03_06_022842) do
     t.string "Product_Grade"
     t.integer "Nb_Appartement"
     t.integer "Nb_Business"
+    t.integer "Nb_Company"
     t.integer "Nb_Floor"
     t.integer "Nb_Basement"
     t.integer "Nb_Cage"
     t.integer "Nb_Parking"
     t.integer "Nb_OccupantPerFloor"
-    t.integer "Nb_OpperatingHour"
+    t.string "Nb_OperatingHour"
+    t.string "Nb_Ele_Suggested"
+    t.string "Price_Per_Ele"
+    t.string "Subtotal"
+    t.string "Install_Fee"
     t.string "Final_Price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
