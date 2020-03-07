@@ -1,14 +1,36 @@
 # ROCKET ELEVATORS INFORMATION SYSTEM
 
-Ruby On Rails project for RocketElevators. 
-Make the interactive website with the original static website of "Jackie" and link it to a database to store "Employee" login data and the quote data in separate tables. 
-The website have a backoffice that employee can login to acces the data from quote.
+Ruby On Rails project for RocketElevators.  
+Make the interactive website with the original static website of "Jackie" and link it to a database to store "User" and "Employee" login data and the quote data in separate tables.  
+The website have a backoffice that employee can login to acces the data from quote.  
 
 ## Configuration
   - Ruby version : 2.6.5  
   - Rails version : 5.2.4.1
   - Gem version : 3.1.2
   - MySQL version : 8.0.19
+
+## Link to the video
+    https://youtu.be/3A9tzJVdl8s
+    - by maria
+
+## Collaborators
+  - Maria - Collaborator -maguilar93
+
+  - Jackie - Team Leader -Kamiwackii
+
+  - Reda - Collaborator -RdaBouazzaoui
+
+  - Lou - Collaborator -HelloLou
+
+
+## Specials Acknowledgments
+
+- Afandy -afandyng
+
+- Jorge -jorgechavarriaga
+
+- Kiril -kirilkk9
 
 ## List of required Gems
     - actioncable (6.0.2.1, 5.2.4.1)
@@ -178,27 +200,5 @@ The website have a backoffice that employee can login to acces the data from quo
     - xmlrpc (0.3.0)
     - xpath (3.2.0)
     - zeitwerk (2.3.0)
-    - zlib (default: 1.0.0)
-
-## Link to the video
-
-
-
-## Collaborators
-  - Maria - Collaborator -maguilar93
-
-  - Jackie - Team Leader -Kamiwackii
-
-  - Reda - Collaborator -RdaBouazzaoui
-
-  - Lou - Collaborator -HelloLou
-
-
-## Specials Acknowledgments
-
-- Afandy -afandyng
-
-- Jorge -jorgechavarriaga
-
-- Kiril -kirilkk9
-
+    - zlib (default: 1.0.0)  
+    
