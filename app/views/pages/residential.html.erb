@@ -4,15 +4,10 @@
 	</head>
 
 	<body id="top" class="smoothscroll enable-animation grain-blue">
-     <body class="smoothscroll enable-animation">
-
-	<!-- SLIDE TOP -->
-	<div id="slidetop">
-
-		<div class="container">
-
-			<div class="row">
-
+		<!-- Parallax Ribbon -->
+		<section class="parallax parallax-1" style="background-image: url(<%= asset_url("AdobeStock_179073967.jpeg") %>); height:600px;">
+			<div class="overlay dark-3"><!-- dark overlay [1 to 9 opacity] --></div>
+			<div class="container-fluid">
 				<div class="text-center">
 					<h1 class="m-0 fs-50 fw-300 wow fadeInUp" data-wow-delay="0.4s">Residential Elevators</h1>
 					<p class="lead fs-30 wow fadeInUp" data-wow-delay="0.7s">All you need to know about them.</p>
@@ -21,7 +16,6 @@
 						<a class="btn btn-info btn-lg" href="quoteform">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>	
 					</div>
 				</div>
-
 			</div>
 		</section>
 		<!-- /Parallax Ribbon-->
@@ -31,38 +25,34 @@
 			<div class="container text-center">
 				<div class="row text-left">
 					<div class="col-md-8 col-sm-12 mb-30">
-						<!-- <img class="img-fluid" src="new_assets/thumbnail_AdobeStock_33298664.jpeg" alt="product image" /> -->
+						<!-- <img class="img-fluid" src="new_assets/thumbnail_AdobeStock_72034307.jpeg" alt="product image" /> -->
 						<%= image_tag("thumbnail_AdobeStock_33298664", :class => "img-fluid", :alt => "product image") %>
-
-		</div>
-
-		<a class="slidetop-toggle" href="#">
-			<!-- toggle button --></a>
-
-	</div>
-	<!-- /SLIDE TOP -->
-
-	<!-- wrapper -->
-	<div id="wrapper">
-
-		<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
-
-			
-			</div>
-			<!-- /Top Nav -->
-
-		<!-- /PAGE HEADER -->
-
-		<!-- CONTACT -->
-		<section class="page-header page-header-xs">
-			<div class="container">
-
-				<h1>QUOTES</h1>
-
-				<!-- breadcrumbs -->
+					</div>
+					<div class="col-md-4 col-sm-12">
+						<h3 class="fw-300">Elevator <span>Overview</span></h3>
+						<p>The greatest elevators built out of military grade material and engineered by the best of the bests.</p>
+						<p>These elevator are designed to fit your corporate building aesthetically and they also have the best elevator music.</p>
+						<hr />
+						<ul class="list-unstyled list-icons">
+							<li><i class="fa fa-check"></i> Military Grade</li>
+							<li><i class="fa fa-check"></i> Great Music</li>
+							<li><i class="fa fa-check"></i> Sensational Buttons</li>
+							<li><i class="fa fa-check"></i> Visually pleasing</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</section>
-		<!-- /PAGE HEADER -->
+		<!-- /HOME -->
+
+
+		<!-- FEATURES -->
+		<section id="features" class="pt-30">
+			<div class="container-fluid">
+				<header class="text-center">
+					<h2>Our Features</h2>
+					<hr />
+				</header>
 
 				<!-- FEATURED BOXES 3 -->
 				<div class="row">
@@ -80,56 +70,9 @@
 						<div class="text-center">
 							<h4>Very Accurate Build</h4>
 						</div>
-
-						<!---------------------------------------------START--------------------------------------------------------------------------------------------------------------------------------------------------->
-						<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-						<!-- BILLING -->
-						<fieldset class="mt-60">
-							<div class="row">
-								<div class="col-md-6">
-									<label for="contact_department"> Which Building Type? *</label>
-									<select id="building_type" class="form-control pointer" name="department">
-										<option id="Non" value="None">--- Select ---</option>
-										<option id="Rsl" value="Residential">Residential</option><!-- //11 addR -->
-										<option id="Cml" value="Commercial">Commercial</option><!-- //10 -->
-										<option id="Crp" value="Corporate">Corporate</option><!-- //9 -->
-										<option id="Hyb" value="Hybrid">Hybrid</option><!-- //7 string-->
-									</select><br>
-									<p><strong>Which Elevator Class? *</strong></p>
-									<input type="radio" name="Check" value="standard" onclick="checkRadiovalue()" checked> Standard
-									<input type="radio" name="Check" value="premium" onclick="checkRadiovalue()"> Premium
-									<input type="radio" name="Check" value="excelium" onclick="checkRadiovalue()"> Excelium
-								</div>
-
-							</div>
-							<div>
-								<!----------------------------------------------residential--------------------------------------------------------------------------------------------------------------------------------------------------->
-								<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-								<div id="resiQ">
-
-									<div class="row">
-										<div class="col-md-12 col-sm-6">
-											<label for="ApartRes">How Many Appartement? *</label>
-											<input id="NbApartRes" name="NbApartRes" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcRes()" onchange="CalcRes()" oninput="validity.valid||(value='')";/>
-										</div>
-
-									</div>
-									<div class="row">
-										<div class="col-md-12 col-sm-6">
-											<label for="FloorRes">How Many Floor? *</label>
-											<input id="NbStageRes" name="NbStageRes"  novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcRes()" onchange="CalcRes()" oninput="validity.valid||(value='')"; />
-										</div>
-
-									</div>
-
-									<div class="row">
-
-										<div class="col-md-12 col-sm-6">
-											<label for="SsRes">How Many Basement? *</label>
-											<input id="NbSsRes" name="NbSsRes" novalidate type="number" novalidate class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcRes()" onchange="CalcRes()" oninput="validity.valid||(value='')"; />
-										</div>
-									</div>
-								</div>
+					</div>
+				</div>
+				<!-- /FEATURED BOXES 3 -->
 
 				<!-- FEATURED BOXES 3 -->
 				<div class="row">
@@ -138,125 +81,21 @@
 							<h4>Sturdy</h4>
 						</div>
 					</div>
-
-								<!---------------------------------------------------------------------Corporate------------------------------------------------------------------------------------------------------------------------>
-								<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-								<div id="corpQ">
-
-									<div class="row">
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">How Many separate tenant companies? *</label>
-											<input id="NbBusiCorp" name="NbBusiCorp" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCorp()"
-											 onchange="CalcCorp()" oninput="validity.valid||(value='')"; />
-										</div>
-
-									</div>
-									<div class="row">
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">How Many Floor? *</label>
-											<input id="NbStageCorp" name="NbStageCorp" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCorp()"
-											 onchange="CalcCorp()" oninput="validity.valid||(value='')"; />
-										</div>
-
-									</div>
-
-									<div class="row">
-
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">How Many Basement? *</label>
-											<input id="NbSsCorp" name="NbSsCorp" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCorp()"
-											 onchange="CalcCorp()" oninput="validity.valid||(value='')";/>
-										</div>
-									</div>
-									<div class="row">
-
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">How Many Parking? *</label>
-											<input id="NbParkCorp" name="NbParkCorp" type="number" novalidate class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCorp()" onchange="CalcCorp()" oninput="validity.valid||(value='')"; />
-										</div>
-									</div>
-									<div class="row">
-
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">What Is The Maximum Number Of Occupants Per Floor? *</label>
-											<input id="MaxOccCorp" name="MaxOccCorp" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcCorp()"
-											 onchange="CalcCorp()" oninput="validity.valid||(value='')";/>
-										</div>
-									</div>
-								</div>
-								<!--------------------hybride-------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-								<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-								<div id="hybQ">
-
-									<div class="row">
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">How Many Separate Businesses? *</label>
-											<input id="NbBusiHyb" name="NbBusiHyb" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcHyb()"
-											 onchange="CalcHyb()" oninput="validity.valid||(value='')"; />
-										</div>
-
-									</div>
-									<div class="row">
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">How Many Floor? *</label>
-											<input id="NbStageHyb" name="NbStageHyb" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcHyb()"
-											 onchange="CalcHyb()" oninput="validity.valid||(value='')"; />
-										</div>
-
-									</div>
-
-									<div class="row">
-
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">How Many Basement? *</label>
-											<input id="NbSsHyb" name="NbSsHyb" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcHyb()" onchange="CalcHyb()" oninput="validity.valid||(value='')"; />
-										</div>
-									</div>
-									<div class="row">
-
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">How Many Parking? *</label>
-											<input id="NbParkHyb" name="NbParkHyb" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcHyb()"
-											 onchange="CalcHyb()" oninput="validity.valid||(value='')"; />
-										</div>
-									</div>
-									<div class="row">
-
-										<div class="col-md-12 col-sm-6">
-											<label for="billing_email">What Is The Maximum Number Of Occupants Per Floor? *</label>
-											<input id="MaxOccHyb" name="MaxOccHyb" novalidate type="number" class="form-control novalidate rst" min="0" max="10000" onkeyup="CalcHyb()"
-											 onchange="CalcHyb()" oninput="validity.valid||(value='')"; />
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-4">
-											<label for="contact_department">Opening Hours Of The Building? *</label>
-											<input id="OppHourHyb" name="OppHourHyb" novalidate type="number" class="form-control novalidate rst" min="1" max="24" onkeyup="CalcHyb()"
-											 onchange="CalcHyb()" oninput="validity.valid||(value='')"; />
-											
-										</div>
-
-									</div>
-
-								</div>
-
-								<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-								<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-						</fieldset>
-						<!-- /BILLING -->
-
-						<!-- /SHIPPING -->
-
-					</div>
-
-
-
-					<div class="col-lg-5 col-sm-5">
-						<div class="heading-title">
-							<h2 style="position: relative;text-align:'center';">OUR PRICES</h2>
+					<div class="col-md-4 col-6">
+						<div class="text-center">
+							<h4>Best Music</h4>
 						</div>
+					</div>
+					<div class="col-md-4 col-6">
+						<div class="text-center">
+							<h4>Free Wifi</h4>
+						</div>
+					</div>
+				</div>
+				<!-- /FEATURED BOXES 3 -->
+			</div>
+		</section>
+		<!-- /FEATURES -->
 
 		<!-- -->
 		<section class="alternate">
@@ -266,29 +105,9 @@
 					<div class="mt-30">
 						<a class="btn btn-info btn-lg" href="quoteform">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>	
 					</div>
-					
-                    
-				<% end %>
+				</div>
 			</div>
 		</section>
-	</div>
-	<!-- /CHECKOUT -->
-	<!-- /CART -->
-
-
-	<!-- /FOOTER -->
-
-	<!-- /wrapper -->
-
-	<!-- SCROLL TO TOP -->
-	<a href="#" id="toTop"></a>
-		
-
-
-	
-
-        		<!-- JAVASCRIPT FILES -->
-        <%= javascript_include_tag "scripts" %>	
-
+		<!-- / -->
 	</body>
 </html>
