@@ -47,56 +47,42 @@
           </button>
 
           <!-- Logo -->
-          <a class="logo float-left" href="index#">
-            <%= image_tag("R2", :alt => "Rocket Elevators Logo") %>
-          </a>
+          <%= link_to image_tag("R2", :alt => "Rocket Elevators Logo"), index_path, :class => "logo float-left" %>
 
           <div class="navbar-collapse collapse float-right nav-main-collapse">
             <nav class="nav-main">
               <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
                 <li class="active"><!-- HOME -->
-                  <a href="index">
-                    HOME
-                  </a>
+                  <%= link_to 'HOME', index_path %>
                 </li>
-                <li class="dropdown"><!-- SERVICES -->
-                  <a class="dropdown-toggle" href="index#services">
-                    SERVICES
-                  </a>
+                <li class="dropdown"><!-- SERVICES -->  
+                  <%= link_to 'SERVICES', index_path(anchor: "services") %>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="residential">RESIDENTIAL</a>
+                      <%= link_to 'RESIDENTIAL', residential_path %>
                     </li>
                     <li>
-                      <a href="corporate">CORPORATE</a>
+                      <%= link_to 'CORPORATE', corporate_path %>
                     </li>
                     <li>
-                      <a href="quoteform">GET QUOTE</a>
+                      <%= link_to 'GET QUOTE', quoteform_path %>
                     </li>
                   </ul>
                 </li>
                 <li><!-- WORK -->
-                  <a href="index#work">
-                    PORTFOLIO
-                  </a>
+                  <%= link_to 'PORTFOLIO', index_path(anchor: "work") %>
                 </li>
                 <li><!-- NEWS -->
-                  <a href="index#news">
-                    NEWS
-                  </a>
+                  <%= link_to 'NEWS', index_path(anchor: "news") %>
                 </li>
                 <li><!-- CLIENTS -->
-                  <a href="index#customers">
-                    CLIENTS
-                  </a>
+                  <%= link_to 'CLIENTS', index_path(anchor: "customers") %>
                 </li>
                 <li><!-- CONTACT -->
-                  <a href="index#contact">
-                    CONTACT
-                  </a>
+                  <%= link_to 'CONTACT', index_path(anchor: "contact") %>
                 </li>
                   <li>
-                    <a href="login">LOGIN</a>
+                    <%= link_to 'LOGIN', login_path %>
                   </li>
               </ul>
             </nav>
