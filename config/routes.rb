@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'residential' => 'pages#residential' # residential
   get 'quoteform' => 'quote#new' # quote form
   get 'login' => 'pages#login'
+  get 'sign_up' => 'users#sign_up'
+  get 'sign_in' => 'users#sign_in'
   get 'leads' => 'leads#new'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
