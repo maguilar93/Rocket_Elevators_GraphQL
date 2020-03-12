@@ -6,143 +6,210 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Employee.create!(first_name: 'admin', last_name: 'istrator', title: 'A', email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-Employee.create!(first_name: 'jackie', last_name: 'lai', title: 'B', email: 'jack@q', password: 'testing', password_confirmation: 'testing') if Rails.env.development?
+jack = Employee.create!(first_name: 'jackie', last_name: 'lai', title: 'B', email: 'jack@q', password: 'testing', password_confirmation: 'testing') if Rails.env.development?
 Employee.create!(first_name: '123', last_name: '321', title: '0', email: '123@123', password: '123123', password_confirmation: '123123') if Rails.env.development?
 
 
 require 'faker'
 require 'date'
 
-i = 0
-
 300.times do |n|
-    Email = Faker::Internet.email
-    Title = Faker::Lorem.word #problem
-    First = Faker::Name.first_name
-    Last = Faker::Name.last_name
-    batteryId =  i += 1
-    AddressA = Faker::Address.street_address
-    Name = Faker::Name.name
-    City = Faker::Address.city
-    Secondary_Address = Faker::Address.secondary_address
-    Street = Faker::Address.street_name
-    Business = Faker::Company.name
-    Email = Faker::Internet.email
-    Phone = Faker::PhoneNumber.phone_number
-    Years = 1976+rand(42)
-    Year = 2020+rand(3)
-    Month = 1+rand(11)
-    Day = 1+rand(28)
-    d = Date.new(Years, Month, Day)
-    c = Date.new(Year, Month, Day)
-    d.strftime("%F")
-    c.strftime("%F")
-    Type = Faker::Lorem.word
-    Floors = 0+rand(50)
-    Status = Faker::Lorem.word
-    Information = Faker::Lorem.sentence
-    Notes = Faker::Lorem.sentence
-    Test = rand(4)
-    if (Test != 1) then
-        Information = ""
+    nameF = Faker::Name.name
+    businessF = Faker::Company.name
+    emailF = Faker::Internet.email
+    phoneF = Faker::PhoneNumber.phone_number
+    projname = Faker::Lorem.words(number: 3, supplemental: true)
+    descriptionF = Faker::Lorem.sentence(word_count: 4, supplemental: true, random_words_to_add: 3)
+    departmentF = ["Question","Corporate","Residential"].sample
+    informationF = Faker::Lorem.paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 3)
+    yearF = 2018+rand(2)
+    monthF = 1+rand(11)
+    if monthF == 2
+        dayF = 1+rand(27)
+    else
+        dayF = 1+rand(29)
     end
+    c = Date.new(yearF, monthF, dayF)
+    c.strftime("%F")
+    # fileF = ""
 
     Lead.create(
-        full_name: Name,
-        company_name: Business,
-        email: Email,
-        phone: Phone,
-        project_name: Type,
-        :Description => Information,
-        department: Status,
-        message: Information,
-        date_of_contact: c
+        full_name: nameF,
+        company_name: businessF,
+        email: emailF,
+        phone: phoneF,
+        project_name: projname,
+        project_desc: descriptionF,
+        department: departmentF,
+        message: informationF,
+        # attached_file: fileF,
+        created_at: c,
+        updated_at: c
+    )
+    # if rand(2) = 0
+    #     Quote.create(
+    #         Full_Name: nameF,
+    #         Phone_Number: phoneF,
+    #         Company_Name: businessF,
+    #         Email: emailF,
+    #         Building_Type: ,
+    #         Product_Grade: ,
+    #         Nb_Appartement: rand(50..400),
+    #         Nb_Business: ,
+    #         Nb_Company: ,
+    #         Nb_Floor: rand(2..45),
+    #         Nb_Basement: rand(3),
+    #         Nb_Cage: ,
+    #         Nb_Parking: ,
+    #         Nb_OccupantPerFloor: ,
+    #         Nb_OperatingHour: ,
+    #         Nb_Ele_Suggested: ,
+    #         Price_Per_Ele: ,
+    #         Subtotal: ,
+    #         Install_Fee: ,
+    #         Final_Price: ,
+    #         created_at: c,
+    #         updated_at: c
+    #     )
+    # end
+end
+
+50.times do |n|
+
+    typeF = ["Billing", "Shipping", "Home", "Business"].sample
+    statusF = ["active", "inactive"].sample
+    entityF = "customer"
+    addrF = Faker::Address.street_address
+    secondary_addressF = Faker::Address.secondary_address
+    cityF = Faker::Address.city
+    postalF = Faker::Address.zip
+    notesF = Faker::Lorem.sentence(word_count: 4, supplemental: true, random_words_to_add: 5)
+
+    fake_address = Address.create!(
+        type_of_address: typeF,
+        status: statusF,
+        entity: entityF,
+        number_n_street: addrF,
+        suite_or_apt: secondary_addressF,
+        city: cityF,
+        postal_code: postalF,
+        country: "US",
+        notes: notesF
     )
 
-    1.times do |n|
-    
-        addressB = Address.create!(
-            type_of_address: AddressA,
-            status: Status,
-            entity: Status,
-            number_n_street: Street,
-            suite_or_apt: Secondary_Address,
-            city: City,
-            postal_code: Status,
-            country: Status,
-            notes: Notes
-        )
+    nameF = Faker::Name.name
+    unique_businessF = Faker::Company.name
+    phoneF = Faker::PhoneNumber.phone_number
+    emailF = Faker::Internet.email
+    yearF = rand(2017..2019)
+    monthF = rand(1..12)
+    if monthF == 2
+        dayF = rand(1..28)
+    else
+        dayF = rand(1..30)
+    end
+    c = Date.new(yearF, monthF, dayF)
+    c.strftime("%F")
 
-        customers = Customers.create!(
-            # user_id:  ,
-            customer_create_date: d,
-            company_name: Business,
-            company_hq_addr_ID: addressB.id,
-            name_company_contact: Name,
-            company_phone: Phone,
-            contact_email: Email,
-            company_desc: Notes,
-            full_name_STA: Name,
-            tech_authority_phone: Phone,
-            tech_manager_email: Email,
-        )
-
-        building  = Building.create!(
-            customer_ID:  customer.id,
-            address_ID: addressB.id,
-            full_name_building_admin: Name,
-            admin_email: Email,
-            admin_phone: Phone,
-            full_name_tech_contact: Name,
-            tech_email: Email,
-            tech_phone: Phone,
-            # created_at: c
-        )
-        Building_Detail.create!(
-            building_id:  building.id,
-            Information_Key: Type,
-            Value: Type
-        )
-
-        1.times do |n|
-            battery = Battery.create!(
-                building_ID: building.id,
-                battery_type: Type,
-                status: Status,
-                employee_ID: employee.id,
-                date_commision: Type,
-                date_last_inspect: Years,
-                certificate_operations: Notes,
-                info: Notes,
-                notes: Notes,
-                # created_at: c
+    fake_customer = Customer.create!(
+        customer_create_date: c,
+        company_name: unique_businessF,
+        address_id: fake_address.id,
+        name_company_contact: nameF,
+        company_phone: phoneF,
+        contact_email: emailF,
+        company_desc: notesF,
+        full_name_STA: nameF,
+        tech_authority_phone: phoneF,
+        tech_manager_email: emailF,
+        # created_at: c,
+        # updated_at: c
+    )
+    additional_building = rand(2)
+    additional_building.times do |n|
+        if additional_building != 0
+            typeF = ["Billing", "Shipping", "Home", "Business"].sample
+            statusF = ["active", "inactive"].sample
+            entityF = "building"
+            addrF = Faker::Address.street_address
+            secondary_addressF = Faker::Address.secondary_address
+            cityF = Faker::Address.city
+            postalF = Faker::Address.zip
+            notesF = Faker::Lorem.sentence(word_count: 4, supplemental: true, random_words_to_add: 5)
+            
+            fake_address = Address.create!(
+                type_of_address: typeF,
+                status: statusF,
+                entity: entityF,
+                number_n_street: addrF,
+                suite_or_apt: secondary_addressF,
+                city: cityF,
+                postal_code: postalF,
+                country: "US",
+                notes: notesF
             )
+        end
 
-            rand(1..8).times do |n|
-                column = Column.create!(
-                    battery_id: battery.id,
-                    column_type: Type,
-                    number_floors: Floors,
-                    status: Status,
-                    info: Notes,
-                    notes: Notes
+        fake_building  = Building.create!(
+            customer_id:  fake_customer.id,
+            address_id: fake_address.id,
+            admin_full_name: nameF,
+            admin_email: emailF,
+            admin_phone: phoneF,
+            tech_full_name: nameF,
+            tech_email: emailF,
+            tech_phone: phoneF,
+        )
+        buildingtypeF = ["Residential","Commercial","Corporate","Hybrid"].sample
+        BuildingDetail.create!(
+            building_id:  fake_building.id,
+            info_key: "Type",
+            value: buildingtypeF
+        )
+
+        
+        certificateF = Faker::IDNumber.valid
+        notesF = Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 3)
+
+        fake_battery = Battery.create!(
+            building_id: fake_building.id,
+            battery_type: buildingtypeF,
+            status: "active",
+            employee_id: jack.id,
+            date_commision: c,
+            date_last_inspect: c,
+            certificate_operations: certificateF,
+            info: notesF,
+            notes: notesF,
+            # created_at: c,
+            # updated_at: c
+        )
+        floorsF = rand(2..20)
+        rand(1..5).times do |n|
+            fake_column = Column.create!(
+                battery_id: fake_battery.id,
+                column_type: buildingtypeF,
+                number_floors: floorsF,
+                status: statusF,
+                info: notesF,
+                notes: notesF
+            )
+            rand(1..6).times do |n|
+                certificateF = Faker::IDNumber.valid
+                Elevator.create!(
+                    column_id:  fake_column.id,
+                    serial_number: Faker::IDNumber.south_african_id_number,
+                    model: ["Standard","Premium","Excellium"].sample,
+                    elevator_type: buildingtypeF,
+                    status: "active",
+                    date_commision: c,
+                    date_last_inspect: c,
+                    certificate_inspect: certificateF,
+                    info: notesF,
+                    notes: notesF,
+                    # created_at: c,
+                    # created_at: c
                 )
-
-                rand(1..10).times do |n|
-                    Elevator.create!(
-                        column_ID:  column.id,
-                        serial_number: Type,
-                        model: Type,
-                        elevator_type: Type,
-                        status: Status,
-                        date_commision: c,
-                        date_last_inspect: c,
-                        certificate_inspect: Type,
-                        info: Notes,
-                        notes: Notes,
-                        # created_at: c
-                    )
-                end
             end
         end
     end
