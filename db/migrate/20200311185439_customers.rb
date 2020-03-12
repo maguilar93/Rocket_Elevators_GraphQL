@@ -3,7 +3,6 @@ class Customers < ActiveRecord::Migration[5.2]
     create_table :customers do |t|
       t.timestamp :customer_create_date, :null => false
       t.string :company_name, :null => false
-      t.string :company_hq_addr_id, :null => false
       t.string :name_company_contact, :null => false
       t.string :company_phone
       t.string :contact_email, :null => false
