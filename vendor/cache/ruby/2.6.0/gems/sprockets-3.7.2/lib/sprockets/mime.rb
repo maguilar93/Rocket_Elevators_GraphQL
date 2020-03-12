@@ -123,7 +123,6 @@ module Sprockets
             end
           end
         end
-
         graph
       end
   end
