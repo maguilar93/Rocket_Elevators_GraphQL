@@ -19,5 +19,15 @@ Rails.application.routes.draw do
   get 'sign_in' => 'users#sign_in'
   get 'leads' => 'leads#new'
 
+  # namespace :admin do
+  #   resources :addresses do
+  #     resources :customers do
+  #       resources :buildings do
+  #         resources :building_details
+  #       end
+  #     end
+  #   end
+  # end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

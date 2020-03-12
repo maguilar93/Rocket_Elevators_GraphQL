@@ -1,6 +1,12 @@
 ActiveAdmin.register Employee do
   permit_params :first_name, :last_name, :email, :password, :password_confirmation
 
+  # sidebar "Employee Details", only: [:show, :edit] do
+  #   ul do
+  #       li link_to "Battery", admin_employee_batteries_path(resource)
+  #   end
+  # end
+
   index do
     selectable_column
     id_column
