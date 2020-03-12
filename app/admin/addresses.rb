@@ -1,6 +1,13 @@
 ActiveAdmin.register Address do
     permit_params :type_of_address, :status, :entity, :number_n_street, :suite_or_apt, :city, :postal_code, :country, :notes
   
+    sidebar "Address Details", only: [:show, :edit] do
+        ul do
+            # li link_to "Buildings", admin_address_buildings_path(resource)
+            li link_to "Customers", admin_address_customers_path(resource)
+        end
+    end
+
     index do
         selectable_column
         id_column
@@ -35,4 +42,5 @@ ActiveAdmin.register Address do
         f.actions
     end
 end
+
   

@@ -9,7 +9,6 @@ Employee.create!(first_name: 'admin', last_name: 'istrator', title: 'A', email: 
 jack = Employee.create!(first_name: 'jackie', last_name: 'lai', title: 'B', email: 'jack@q', password: 'testing', password_confirmation: 'testing') if Rails.env.development?
 Employee.create!(first_name: '123', last_name: '321', title: '0', email: '123@123', password: '123123', password_confirmation: '123123') if Rails.env.development?
 
-
 require 'faker'
 require 'date'
 
@@ -22,12 +21,12 @@ require 'date'
     descriptionF = Faker::Lorem.sentence(word_count: 4, supplemental: true, random_words_to_add: 3)
     departmentF = ["Question","Corporate","Residential"].sample
     informationF = Faker::Lorem.paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 3)
-    yearF = 2018+rand(2)
-    monthF = 1+rand(11)
+    yearF = rand(2017..2019)
+    monthF = rand(1..12)
     if monthF == 2
-        dayF = 1+rand(27)
+        dayF = rand(1..28)
     else
-        dayF = 1+rand(29)
+        dayF = rand(1..30)
     end
     c = Date.new(yearF, monthF, dayF)
     c.strftime("%F")
@@ -125,9 +124,9 @@ end
         # created_at: c,
         # updated_at: c
     )
-    additional_building = rand(2)
-    additional_building.times do |n|
-        if additional_building != 0
+    additional_building = rand(1..3)
+    additional_building.times do |x|
+        if x > 0
             typeF = ["Billing", "Shipping", "Home", "Business"].sample
             statusF = ["active", "inactive"].sample
             entityF = "building"

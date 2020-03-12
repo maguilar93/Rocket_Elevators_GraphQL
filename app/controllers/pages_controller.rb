@@ -1,2 +1,2 @@
-class PageController < ApplicationController
+class PagesController < ApplicationController
 end
