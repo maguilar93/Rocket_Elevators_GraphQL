@@ -7,6 +7,8 @@ ruby '2.6.5'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+# Use postgresql as the database for Active Record
+gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -37,6 +39,8 @@ gem 'font-awesome-sass', '~> 5.12.0'
 
 gem 'devise'
 gem 'activeadmin'
+gem 'faker'
+gem 'date'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

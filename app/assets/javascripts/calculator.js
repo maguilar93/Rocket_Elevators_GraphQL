@@ -107,8 +107,8 @@ function ShowElevPrice(pline) {
 };
 
 function ShowTotals(s,f,t) {
-    $("#calc-tax").val("$ " + s.toFixed(2));
-    $("#calc-subtotal").val("$ " + f.toFixed(2));
+    $("#calc-subtotal").val("$ " + s.toFixed(2));
+    $("#calc-tax").val("$ " + f.toFixed(2));
     $("#calc-total").val("$ " + t.toFixed(2));
 };
 
