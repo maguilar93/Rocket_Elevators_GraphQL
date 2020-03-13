@@ -8,8 +8,11 @@ The website have a backoffice that employee can login to access the data from qu
   Expansion of the relational database model.
   Creation of a decision database (DataWarehouse) with PostGres.
   Restitution and visualization of the data used for answering the three questions.
+  
     1. How many contact requests are made per month?
+    
     2. How many bid solicitations are made per month?
+    
     3. How many elevators per customer do we have?
     
 ### Link to the video week 5
