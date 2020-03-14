@@ -33,9 +33,9 @@ The website have a backoffice that employee can login to access the data from qu
   - Bundler version : 1.17.3
 
 ## Link to the video
-   https://youtu.be/k8fnkJH5f4A  (week 5)
+   https://youtu.be/k8fnkJH5f4A  (week 5)  
       -by maria  
-   https://youtu.be/3A9tzJVdl8s  (week 4)
+   https://youtu.be/3A9tzJVdl8s  (week 4)  
       -by maria  
 
 ## Collaborators
