@@ -55,32 +55,161 @@ require 'date'
         created_at: c,
         updated_at: c
     )
-    # if rand(2) = 0
-    #     Quote.create(
-    #         Full_Name: nameF,
-    #         Phone_Number: phoneF,
-    #         Company_Name: businessF,
-    #         Email: emailF,
-    #         Building_Type: ,
-    #         Product_Grade: ,
-    #         Nb_Appartement: rand(50..400),
-    #         Nb_Business: ,
-    #         Nb_Company: ,
-    #         Nb_Floor: rand(2..45),
-    #         Nb_Basement: rand(3),
-    #         Nb_Cage: ,
-    #         Nb_Parking: ,
-    #         Nb_OccupantPerFloor: ,
-    #         Nb_OperatingHour: ,
-    #         Nb_Ele_Suggested: ,
-    #         Price_Per_Ele: ,
-    #         Subtotal: ,
-    #         Install_Fee: ,
-    #         Final_Price: ,
-    #         created_at: c,
-    #         updated_at: c
-    #     )
-    # end
+
+    r = rand(3)
+    
+    if r == 0
+        building_type = "residential"
+        product_grade = ["Standard","Premium","Excellium"].sample
+        if product_grade == "Standard"
+            price_per_elev = 7565
+            fee = 0.1
+        elsif product_grade == "Premium"
+            price_per_elev = 12345
+            fee = 0.13
+        else
+            price_per_elev = 15400
+            fee = 0.16
+        end
+        x = rand(50..500)
+        y = rand(2..45)
+        z = rand(3)
+
+        cages = rand(1..24)
+
+        Quote.create(
+            Full_Name: nameF,
+            Company_Name: businessF,
+            Email: emailF,
+            Building_Type: building_type,
+            Product_Grade: product_grade,
+            Nb_Appartement: x,
+            Nb_Floor: y,
+            Nb_Basement: z,
+            Nb_Ele_Suggested: cages,
+            Price_Per_Ele: price_per_elev,
+            Subtotal: cages * price_per_elev,
+            Install_Fee: cages * price_per_elev * fee,
+            Final_Price: cages * price_per_elev * (1+fee),
+            created_at: c,
+            updated_at: c
+        )
+    elsif r == 1
+        building_type = "commercial"
+        product_grade = ["Standard","Premium","Excellium"].sample
+        if product_grade == "Standard"
+            price_per_elev = 7565
+            fee = 0.1
+        elsif product_grade == "Premium"
+            price_per_elev = 12345
+            fee = 0.13
+        else
+            price_per_elev = 15400
+            fee = 0.16
+        end
+        x = rand(50..500)
+        y = rand(2..45)
+        z = rand(3)
+
+        cages = rand(1..24)
+
+        Quote.create(
+            Full_Name: nameF,
+            Company_Name: businessF,
+            Email: emailF,
+            Building_Type: building_type,
+            Product_Grade: product_grade,
+            Nb_Business: x,
+            Nb_Floor: y,
+            Nb_Basement: z,
+            Nb_Cage: cages,
+            Nb_Parking: x,
+            Nb_Ele_Suggested: cages,
+            Price_Per_Ele: price_per_elev,
+            Subtotal: cages * price_per_elev,
+            Install_Fee: cages * price_per_elev * fee,
+            Final_Price: cages * price_per_elev * (1+fee),
+            created_at: c,
+            updated_at: c
+        )
+    elsif r == 2
+        building_type = "corporate"
+        product_grade = ["Standard", "Premium", "Excellium"].sample
+        if product_grade == "Standard"
+            price_per_elev = 7565
+            fee = 0.1
+        elsif product_grade == "Premium"
+            price_per_elev = 12345
+            fee = 0.13
+        else
+            price_per_elev = 15400
+            fee = 0.16
+        end
+        x = rand(50..500)
+        y = rand(2..45)
+        z = rand(3)
+
+        cages = rand(1..24)
+
+        Quote.create(
+            Full_Name: nameF,
+            Company_Name: businessF,
+            Email: emailF,
+            Building_Type: building_type,
+            Product_Grade: product_grade,
+            Nb_Company: x,
+            Nb_Floor: y,
+            Nb_Basement: z,
+            Nb_Parking: x,
+            Nb_OccupantPerFloor: rand(300..500),
+            Nb_Ele_Suggested: cages,
+            Price_Per_Ele: price_per_elev,
+            Subtotal: cages * price_per_elev,
+            Install_Fee: cages * price_per_elev * fee,
+            Final_Price: cages * price_per_elev * (1+fee),
+            created_at: c,
+            updated_at: c
+        )
+    else
+        building_type = "hybrid"
+        product_grade = ["Standard","Premium","Excellium"].sample
+        if product_grade == "Standard"
+            price_per_elev = 7565
+            fee = 0.1
+        elsif product_grade == "Premium"
+            price_per_elev = 12345
+            fee = 0.13
+        else
+            price_per_elev = 15400
+            fee = 0.16
+        end
+        x = rand(50..500)
+        y = rand(2..45)
+        z = rand(3)
+
+        cages = rand(1..24)
+
+        Quote.create(
+            Full_Name: nameF,
+            Company_Name: businessF,
+            Email: emailF,
+            Building_Type: building_type,
+            Product_Grade: product_grade,
+            Nb_Business: x,
+            Nb_Floor: y,
+            Nb_Basement: z,
+            Nb_Parking: x,
+            Nb_OccupantPerFloor: rand(300..500),
+            Nb_OperatingHour: rand(1..24),
+            Nb_Ele_Suggested: cages,
+            Price_Per_Ele: price_per_elev,
+            Subtotal: cages * price_per_elev,
+            Install_Fee: cages * price_per_elev * fee,
+            Final_Price: cages * price_per_elev * (1+fee),
+            created_at: c,
+            updated_at: c
+        )
+    end
 end
 
 50.times do |n|
