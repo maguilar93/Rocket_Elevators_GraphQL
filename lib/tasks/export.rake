@@ -2,7 +2,7 @@ require 'pg'
 namespace :transfer do
     desc "export to postgresql"
     task data: :environment do
-        connected = PG::Connection.open(host: "localhost", port: "5432", dbname:"psql_test_development", user: "jack", password: "testing")
+        connected = PG::Connection.open(host: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com", port: "5432", dbname:"JackieLai", user: "codeboxx", password: "Codeboxx1!")
         
         # prepares all the queries
         connected.prepare('to_fact_contacts', "INSERT INTO \"fact_contacts\" (date_created, company_name, email, project_name) VALUES ($1,$2,$3,$4)")
@@ -13,32 +13,18 @@ namespace :transfer do
         # resets fact_contacts table and re-import values
         connected.exec ("TRUNCATE fact_contacts RESTART IDENTITY")
         Lead.all.each do |lead|
-            # a = lead.created_at 
-            # b = lead.company_name
-            # c = lead.email
-            # d = lead.project_name
             connected.exec_prepared('to_fact_contacts',[lead.created_at, lead.company_name, lead.email, lead.project_name])
         end
     
         # resets fact_contacts table and re-import values
         connected.exec ("TRUNCATE fact_quotes RESTART IDENTITY")
         Quote.all.each do |quote|
-            # a =
-            # b = 
-            # c =
-            # d =
-            # connected.exec("INSERT INTO \"fact_quotes\" (date_created, company_name, email, nbelevs) VALUES ('#{quote.created_at}', '#{quote.Company_Name}', '#{quote.Email}', '#{quote.Nb_Cage}')")
             connected.exec_prepared('to_fact_quotes', [quote.created_at, quote.Company_Name, quote.Email, quote.Nb_Cage])
         end
 
         # resets fact_contacts table and re-import values
         connected.exec ("TRUNCATE fact_elevators RESTART IDENTITY")
         Elevator.all.each do |elevator|
-            # a =
-            # b = 
-            # c =
-            # d =
-            # connected.exec("INSERT INTO \"fact_elevators\" (serial_number, commissioning_date, building_id, customer_id, city)VALUES ('#{elevator.serial_number}', '#{elevator.date_commision}', '#{elevator.column.battery.building_id}', '#{elevator.column.battery.building.customer_id}', '#{elevator.column.battery.building.address.city}')")
             connected.exec_prepared('to_fact_elevators', [elevator.serial_number, elevator.date_commision, elevator.column.battery.building_id, elevator.column.battery.building.customer_id, elevator.column.battery.building.address.city])
         end
 
@@ -53,11 +39,19 @@ namespace :transfer do
                     end
                 end
             end
-            # connected.exec ("INSERT INTO \"dim_customers\" (date_created, company_name, contact_name, contact_email, nbelevs, customer_city) VALUES ('#{customer.created_at}', '#{customer.company_name}', '#{customer.name_company_contact}', '#{customer.contact_email}', #{nb_elevators}, '#{customer.address.city}')")
             connected.exec_prepared('to_dim_customers', [customer.created_at, customer.company_name, customer.name_company_contact, customer.contact_email, nb_elevators, customer.address.city])
         end
     end
 
+    desc "create my database"
+    task init: :environment do
+        puts "hi"
+        connected = PG::Connection.open(host: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com", port: "5432", dbname: 'postgres', user: "codeboxx", password: "Codeboxx1!")
+        puts connected
+        connected.exec("CREATE DATABASE JackieLai")
+    end
+
+    desc "test"
     task data: :environment do
         #ici maria :)
     end
