@@ -41,6 +41,9 @@ gem 'devise'
 gem 'activeadmin'
 gem 'faker'
 gem 'date'
+gem 'whenever', require: false
+gem "chartkick"
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
