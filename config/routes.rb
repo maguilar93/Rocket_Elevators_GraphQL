@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+  end
+  
+  post "/graphql", to: "graphql#execute"
   devise_for :users
   devise_for :employees, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -18,6 +23,7 @@ Rails.application.routes.draw do
   get 'sign_up' => 'users#sign_up'
   get 'sign_in' => 'users#sign_in'
   get 'leads' => 'leads#new'
+
 
   # namespace :admin do
   #   resources :addresses do
