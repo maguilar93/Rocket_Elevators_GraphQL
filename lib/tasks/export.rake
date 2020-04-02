@@ -11,7 +11,7 @@ namespace :transfer do
         connected.prepare('to_fact_quotes', "INSERT INTO \"fact_quotes\" (date_created, company_name, email, nbelevs) VALUES ($1,$2,$3,$4)")
         connected.prepare('to_fact_elevators', "INSERT INTO \"fact_elevators\" (serial_number, commissioning_date, building_id, customer_id, city) VALUES ($1,$2,$3,$4,$5)")
         connected.prepare('to_dim_customers', "INSERT INTO \"dim_customers\" (date_created, company_name, contact_name, contact_email, nbelevs, customer_city) VALUES ($1,$2,$3,$4,$5,$6)")
-        connected.prepare('to_fact_intervention', "INSERT INTO \"fact_intervention\" (employee_id, building_id, battery_id, column_id, elevator_id, date_start_intervention, hour_start_intervention, date_end_intervention, hour_end_intervention, result, report, status) VALUES ($1,$2,$3,$4,$5,$6,7$,8$,9$,10$,11$,12$)")
+        connected.prepare('to_fact_intervention', "INSERT INTO \"fact_intervention\" (employee_id, building_id, battery_id, column_id, elevator_id, date_start_intervention, hour_start_intervention, date_end_intervention, hour_end_intervention, result, report, status) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)")
 
 
         # resets fact_contacts table and re-import values
@@ -67,7 +67,7 @@ namespace :transfer do
 
                 interventionF = Faker::Time.backward(days: 300, format: :default) #=> "2014-09-17 19:56:33 -0700"
 
-                connected.exec_prepared('to_fact_intervention', [elevator.column.battery.employee_id, elevator.column.battery.building_id, elevator.column.battery_id, elevator.column_id, elevator.elevator_id, date_start_intervention:c, hour_start_intervention: interventionF, date_end_intervention:c, hour_end_intervention: interventionF, result: resultF, report: reportF, status: statusF ])
+                connected.exec_prepared('to_fact_intervention', [elevator.column.battery.employee_id, elevator.column.battery.building_id, elevator.column.battery_id, elevator.column_id, elevator.id, date_start_intervention:c, hour_start_intervention: interventionF, date_end_intervention:c, hour_end_intervention: interventionF, result: resultF, report: reportF, status: statusF ])
             end
         end
     end
