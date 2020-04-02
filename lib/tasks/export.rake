@@ -11,8 +11,6 @@ namespace :transfer do
         connected.prepare('to_fact_quotes', "INSERT INTO \"fact_quotes\" (date_created, company_name, email, nbelevs) VALUES ($1,$2,$3,$4)")
         connected.prepare('to_fact_elevators', "INSERT INTO \"fact_elevators\" (serial_number, commissioning_date, building_id, customer_id, city) VALUES ($1,$2,$3,$4,$5)")
         connected.prepare('to_dim_customers', "INSERT INTO \"dim_customers\" (date_created, company_name, contact_name, contact_email, nbelevs, customer_city) VALUES ($1,$2,$3,$4,$5,$6)")
-        connected.prepare('to_fact_intervention', "INSERT INTO \"fact_intervention\" (employee_id, building_id, battery_id, column_id, elevator_id, date_start_intervention, hour_start_intervention, date_end_intervention, hour_end_intervention, result, report, status) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)")
-
 
         # resets fact_contacts table and re-import values
         connected.exec ("TRUNCATE fact_contacts RESTART IDENTITY")
@@ -45,31 +43,6 @@ namespace :transfer do
             end
             connected.exec_prepared('to_dim_customers', [customer.created_at, customer.company_name, customer.name_company_contact, customer.contact_email, nb_elevators, customer.address.city])
         end
-
-        
-        # resets fact_intervention table and re-import values
-        connected.exec ("TRUNCATE fact_intervention RESTART IDENTITY")
-        Elevator.all.each do |elevator|
-
-            50.times do |n|
-                reportF = Faker::Lorem.sentence(word_count: 4, supplemental: true, random_words_to_add: 3)
-                resultF = ["Success", "Failure", "Incomplete"].sample
-                statusF = ["Pending", "InProgress", "Interrupted", "Resumed", "Complete"].sample
-                yearF = rand(2017..2019)
-                monthF = rand(1..12)
-                if monthF == 2
-                    dayF = rand(1..28)
-                else
-                    dayF = rand(1..30)
-                end
-                c = Date.new(yearF, monthF, dayF)
-                c.strftime("%F")
-
-                interventionF = Faker::Time.backward(days: 300, format: :default) #=> "2014-09-17 19:56:33 -0700"
-
-                connected.exec_prepared('to_fact_intervention', [elevator.column.battery.employee_id, elevator.column.battery.building_id, elevator.column.battery_id, elevator.column_id, elevator.id, date_start_intervention:c, hour_start_intervention: interventionF, date_end_intervention:c, hour_end_intervention: interventionF, result: resultF, report: reportF, status: statusF ])
-            end
-        end
     end
 
     desc "create my database"
@@ -80,9 +53,22 @@ namespace :transfer do
         connected.exec("CREATE DATABASE MariaAguilar")
     end
 
-    desc "test"
-    task data: :environment do
-        #ici maria :)
+    # import data for table fact intervention on postgres
+    desc "fact intervention"
+    task fact_intervention: :environment do
+        connected = PG::Connection.open(host: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com", port: "5432", dbname:"mariaaguilar", user: "codeboxx", password: "Codeboxx1!")
+
+        # prepares all the queries
+        connected.prepare('to_fact_intervention', "INSERT INTO \"fact_intervention\" (employee_id, building_id,elevator_id, battery_id, column_id,   date_start_intervention, result, status) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)")
+
+        # resets fact_contacts table and re-import values
+        connected.exec ("TRUNCATE fact_intervention RESTART IDENTITY")
+        Elevator.all.each do |elevator|
+            date_start = Faker::Time.between(from: DateTime.now - 1400, to: DateTime.now, format: :default)
+            result = ["Success","Failure","Incomplete"].sample
+            status = ["Pending", "InProgress", "Interrupted", "Resumed", "Complete"].sample
+            connected.exec_prepared('to_fact_intervention',[elevator.column.battery.employee_id, elevator.column.battery.building_id, elevator.id, elevator.column.battery_id, elevator.column_id, date_start, result,status])
+        end
     end
 end
 
