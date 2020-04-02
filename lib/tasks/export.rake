@@ -59,15 +59,17 @@ namespace :transfer do
         connected = PG::Connection.open(host: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com", port: "5432", dbname:"mariaaguilar", user: "codeboxx", password: "Codeboxx1!")
 
         # prepares all the queries
-        connected.prepare('to_fact_intervention', "INSERT INTO \"fact_intervention\" (employee_id, building_id,elevator_id, battery_id, column_id,   date_start_intervention, result, status) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)")
+        connected.prepare('to_fact_intervention', "INSERT INTO \"fact_intervention\" (employee_id, building_id,elevator_id, battery_id, column_id, date_start_intervention, date_end_intervention, result, report, status) VALUES ($1,$2,$3,$4,$5,$6,$7,$8, $9, $10)")
 
         # resets fact_contacts table and re-import values
         connected.exec ("TRUNCATE fact_intervention RESTART IDENTITY")
         Elevator.all.each do |elevator|
             date_start = Faker::Time.between(from: DateTime.now - 1400, to: DateTime.now, format: :default)
+            date_end = Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :default)
             result = ["Success","Failure","Incomplete"].sample
             status = ["Pending", "InProgress", "Interrupted", "Resumed", "Complete"].sample
-            connected.exec_prepared('to_fact_intervention',[elevator.column.battery.employee_id, elevator.column.battery.building_id, elevator.id, elevator.column.battery_id, elevator.column_id, date_start, result,status])
+            report = Faker::Lorem.sentence(word_count: 4, supplemental: true, random_words_to_add: 3)
+            connected.exec_prepared('to_fact_intervention',[elevator.column.battery.employee_id, elevator.column.battery.building_id, elevator.id, elevator.column.battery_id, elevator.column_id, date_start, date_end, result, report, status])
         end
     end
 end
