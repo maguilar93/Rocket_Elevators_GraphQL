@@ -9,10 +9,11 @@ module Types
     end
     def intervention(id:)
       res = $conn.exec("SELECT * FROM fact_intervention where employee_id = #{id}")
-      intervention = res[id.to_i]
+      intervention = res[0]
       building = Building.find(intervention["building_id"])
-      address = Address.find(building.address_id)
-      intervention[:building_address] = address
+      # address = Address.find(building.address_id)
+      # puts building
+      intervention[:building] = building
       return intervention
     end
     
