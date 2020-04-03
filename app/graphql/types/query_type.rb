@@ -22,12 +22,12 @@ module Types
     def buildings
       Building.all
     end
-    # field :building, Types::BuildingType, null: false do
-    #   argument :id, ID, required: true
-    # end
-    # def building(id:)
-    #   Building.find(id)
-    # end
+    field :building, Types::BuildingType, null: false do
+      argument :id, ID, required: true
+    end
+    def building(id:)
+      Building.find(id)
+    end
 
     #Address Query
     field :addresses, [Types::AddressType], null: false
@@ -54,29 +54,41 @@ module Types
     end
 
     # #Battery Query
-    field :battery, [Types::BatteryType], null: false do
+    field :battery, BatteryType, null: false do
       argument :id, ID, required: true
     end
     def battery(id:) 
       Battery.find(id)
     end
-    field :batteries, Types::BatteryType, null: false
+    field :batteries, [BatteryType], null: false
     def batteries
       Battery.all
     end
 
     # #Column Query
-    # field :column, [Types::ColumnType], null: false do
-    #   argument :id, ID, required: true
-    # end
-    # def column(id:)
-    #   Column.find(id)
-    # end
-    # end
-    # field :columns, Types::ColumnType, null: false
-    # def columns
-    #   Column.all
-    # end
+    field :column, ColumnType, null: false do
+      argument :id, ID, required: true
+    end
+    def column(id:)
+      Column.find(id)
+    end
+    field :columns, [ColumnType], null: false
+    def columns
+      Column.all
+    end
+
+    # Customer Query
+    field :customer, CustomerType, null: false do
+      argument :id, ID, required: true
+    end
+    def customer(id:) 
+      Customer.find(id)
+    end
+    field :customers, [CustomerType], null: false
+    def customers
+      Customer.all
+    end
+    
 
 
     def elevators
