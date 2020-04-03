@@ -2,7 +2,21 @@ module Types
   class QueryType < Types::BaseObject
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
+    $conn = PG.connect(host: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com", port: "5432", dbname:"mariaaguilar", user: "codeboxx", password: "Codeboxx1!")
 
+    field :intervention, InterventionType, null: false do
+      argument :id, ID, required: false
+    end
+    def intervention(id:)
+      res = $conn.exec("SELECT * FROM fact_intervention where employee_id = #{id}")
+      intervention = res[0]
+      building = Building.find(intervention["building_id"])
+      # address = Address.find(building.address_id)
+      # puts building
+      intervention[:building] = building
+      return intervention
+    end
+    
     #Building Query
     field :buildings, [Types::BuildingType], null: false
     def buildings
@@ -20,12 +34,12 @@ module Types
     def addresses
       Address.all
     end
-    field :address, Types::AddressType, null: false do
-      argument :id, ID, required: true
-    end
-    def address(id:)
-      Address.find(id)
-    end
+    # field :address, Types::AddressType, null: false do
+    #   argument :id, ID, required: true
+    # end
+    # def address(id:)
+    #   Address.find(id)
+    # end
 
     #Building Details Query
     field :buildingsdetails, [Types::BuildingdetailsType], null: false
@@ -39,30 +53,42 @@ module Types
       BuildingDetail.find(id)
     end
 
-    #Battery Query
-    field :battery, [Types::BatteryType], null: false do
+    # #Battery Query
+    field :battery, BatteryType, null: false do
       argument :id, ID, required: true
     end
     def battery(id:) 
       Battery.find(id)
     end
-    field :batteries, Types::BatteryType, null: false
+    field :batteries, [BatteryType], null: false
     def batteries
       Battery.all
     end
 
-    #Column Query
-    field :column , [Types::ColumnType] , null: false do
+    # #Column Query
+    field :column, ColumnType, null: false do
       argument :id, ID, required: true
     end
     def column(id:)
       Column.find(id)
     end
-    end
-    field :columns, Types::ColumnType, null: false
+    field :columns, [ColumnType], null: false
     def columns
       Column.all
     end
+
+    # Customer Query
+    field :customer, CustomerType, null: false do
+      argument :id, ID, required: true
+    end
+    def customer(id:) 
+      Customer.find(id)
+    end
+    field :customers, [CustomerType], null: false
+    def customers
+      Customer.all
+    end
+    
 
 
     def elevators
