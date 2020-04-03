@@ -30,7 +30,8 @@ namespace :transfer do
         end
 
         # resets fact_contacts table and re-import values
-        connected.exec("TRUNCATE dim_customers RESTART IDENTITY")
+        connected.exec("TRUNCATE dim_customers RESTART IDENTITY",
+                       "TRUNCATE fact_intervention RESTART IDENTITY")
         Customer.all.each do |customer|
             nb_elevators = 0
             customer.buildings.all.each do |building|
@@ -42,6 +43,8 @@ namespace :transfer do
             end
             connected.exec_prepared('to_dim_customers', [customer.created_at, customer.company_name, customer.name_company_contact, customer.contact_email, nb_elevators, customer.address.city])
         end
+
+
 
         # resets fact_intervention table and re-imports values
         connected.exec("TRUNCATE fact_intervention RESTART IDENTITY")
@@ -55,7 +58,7 @@ namespace :transfer do
         puts "hi"
         connected = PG::Connection.open(host: "localhost", port: "5432", dbname:"postgres", user: "postgres", password: "1e1jjffwjf9")
         puts connected
-        connected.exec("CREATE DATABASE JackieLai")
+        connected.exec("CREATE DATABASE warehouse")
     end
 
     desc "test"
