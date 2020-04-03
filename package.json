@@ -5,7 +5,9 @@
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^14.6.0",
-    "graphql-yoga": "^1.18.3"
+    "graphql-yoga": "^1.18.3",
+    "join-monster": "^2.1.1",
+    "pg": "^8.0.0"
   },
   "description": "Ruby On Rails project for RocketElevators.   Make the interactive website with the original static website of \"Jackie\" and link it to a database to store \"User\" and \"Employee\" login data and the quote data in separate tables.   The website have a backoffice that employee can login to access the data from quote.",
   "version": "1.0.0",
