@@ -2,6 +2,7 @@ module Types
   class QueryType < Types::BaseObject
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
+
     #Building Query
     field :buildings, [Types::BuildingType], null: false
     def buildings

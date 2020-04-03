@@ -2,7 +2,9 @@ require 'pg'
 namespace :transfer do
     desc "export to postgresql"
     task data: :environment do
-        connected = PG::Connection.open(host: "localhost", port: "5432", dbname:"warehouse", user: "postgres", password: "1e1jjffwjf9")
+
+        connected = PG::Connection.open(host: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com", port: "5432", dbname:"mariaaguilar", user: "codeboxx", password: "Codeboxx1!")
+
         
         # prepares all the queries
         connected.prepare('to_fact_contacts', "INSERT INTO \"fact_contacts\" (date_created, company_name, email, project_name) VALUES ($1,$2,$3,$4)")
@@ -58,7 +60,10 @@ namespace :transfer do
         puts "hi"
         connected = PG::Connection.open(host: "localhost", port: "5432", dbname:"postgres", user: "postgres", password: "1e1jjffwjf9")
         puts connected
-        connected.exec("CREATE DATABASE warehouse")
+
+
+        connected.exec("CREATE DATABASE MariaAguilar")
+
     end
 
     desc "test"
