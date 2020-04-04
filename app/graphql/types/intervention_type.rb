@@ -10,6 +10,7 @@ module Types
     field :dateStartIntervention, String, null: true, method: :date_start_intervention
     field :dateEndIntervention, String, null: true, method: :date_end_intervention
     field :building, BuildingType, null: true
+    field :getcustomers, CustomerType, null: true
     
   end
 end

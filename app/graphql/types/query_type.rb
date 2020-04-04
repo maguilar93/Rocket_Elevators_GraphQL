@@ -16,6 +16,20 @@ module Types
       intervention[:building] = building
       return intervention
     end
+
+    field :getcustomers, InterventionType, null: false do
+      argument :id, ID, required: false
+    end
+    def getcustomers(id:)
+      res = $conn.exec("SELECT * FROM fact_intervention where employee_id = #{id}")
+      getcustomers = res[0]
+      building = Building.find(getcustomers["building_id"])
+      #address = Address.find(building.address_id)
+      # puts building
+      getcustomers[:building] = building
+      return getcustomers
+    end
+
     
     #Building Query
     field :buildings, [Types::BuildingType], null: false
@@ -80,6 +94,7 @@ module Types
     # Customer Query
     field :customer, CustomerType, null: false do
       argument :id, ID, required: true
+      argument :building_id, ID, required: false
     end
     def customer(id:) 
       Customer.find(id)
