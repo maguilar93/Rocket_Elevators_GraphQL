@@ -24,7 +24,7 @@ module Types
       res = $conn.exec("SELECT * FROM fact_intervention where employee_id = #{id}")
       getcustomers = res[0]
       building = Building.find(getcustomers["building_id"])
-      # address = Address.find(building.address_id)
+      #address = Address.find(building.address_id)
       # puts building
       getcustomers[:building] = building
       return getcustomers
