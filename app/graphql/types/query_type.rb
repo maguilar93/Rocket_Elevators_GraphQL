@@ -8,26 +8,22 @@ module Types
       argument :id, ID, required: false
     end
     def intervention(id:)
-      res = $conn.exec("SELECT * FROM fact_intervention where employee_id = #{id}")
+      res = $conn.exec("SELECT * FROM fact_intervention where id = #{id}")
       intervention = res[0]
       building = Building.find(intervention["building_id"])
-      # address = Address.find(building.address_id)
-      # puts building
       intervention[:building] = building
       return intervention
     end
 
-    field :getcustomers, InterventionType, null: false do
+    field :get_employee_interventions, InterventionType, null: false do
       argument :id, ID, required: false
     end
-    def getcustomers(id:)
+    def get_employee_interventions(id:)
       res = $conn.exec("SELECT * FROM fact_intervention where employee_id = #{id}")
-      getcustomers = res[0]
-      building = Building.find(getcustomers["building_id"])
-      #address = Address.find(building.address_id)
-      # puts building
-      getcustomers[:building] = building
-      return getcustomers
+      intervention = res[0]
+      building = Building.find(intervention["building_id"])
+      intervention[:building] = buildingdetails
+      
     end
 
     

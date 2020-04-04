@@ -1,7 +1,7 @@
 module Types
   class BuildingdetailsType < Types::BaseObject
-    field :id, ID, null: false
-    field :infoKey, String, null: false, method: :info_key
-    field :value, String, null: false
+    field :id, ID, null: true
+    field :infoKey, String, null: true, method: :info_key
+    field :value, String, null: true
   end
 end
