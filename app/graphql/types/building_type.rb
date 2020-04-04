@@ -11,8 +11,13 @@ module Types
       field :customerId, Integer, null: false, method: :customer_id
       field :addressId, Integer, null: false, method: :address_id
       field :address, AddressType, null: false
+      field :intervention, InterventionType, null: false
+      field :customer, CustomerType, null: false
+      
+
       # field :buildingDetails, BuildingdetailType, null: false, method: :building_details
       # field :customer, CustomerType, null: false
+
 
 
   end

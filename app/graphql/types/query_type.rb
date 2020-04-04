@@ -80,6 +80,7 @@ module Types
     # Customer Query
     field :customer, CustomerType, null: false do
       argument :id, ID, required: true
+      argument :building_id, ID, required: false
     end
     def customer(id:) 
       Customer.find(id)
