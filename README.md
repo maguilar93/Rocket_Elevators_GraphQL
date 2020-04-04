@@ -21,6 +21,8 @@ An API allowing GraphQL queries
 ## How to use
 - Retrieving the address of the building, the beginning and the end of the intervention for a specific intervention.
 In order to make this query work, you need to enter the following in the server.
+
+**
  query{
    intervention(id:2){
      dateStartIntervention
@@ -36,6 +38,7 @@ In order to make this query work, you need to enter the following in the server.
      }
    }
  }
+ **
 
 ## Configuration
   - Ruby version : 2.6.5  
