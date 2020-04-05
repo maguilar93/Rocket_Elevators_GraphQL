@@ -11,6 +11,10 @@ module Types
     field :dateEndIntervention, String, null: true, method: :date_end_intervention
     field :building, BuildingType, null: true
     field :getcustomers, CustomerType, null: true
+    field :buildingdetails, BuildingdetailsType, null: true
+    field :intervention, InterventionType, null: true
+
+
     
   end
 end
